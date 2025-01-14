@@ -1,36 +1,40 @@
-const otps = new Set(["12345", "67890"]);
-const codeForm = document.getElementById("code-form");
-const userCodeInput = document.getElementById("user-code");
-const errorMessage = document.getElementById("error-message");
+document.addEventListener("DOMContentLoaded", function () {
+  // Handling the code form submission
+  const codeForm = document.getElementById("code-form");
+  const userCode = document.getElementById("user-code");
+  const errorMessage = document.getElementById("error-message");
 
-const tosPopup = document.getElementById("tos-popup");
-const tosAcceptCheckbox = document.getElementById("tos-accept");
-const tosAcceptButton = document.getElementById("tos-accept-btn");
+  codeForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const code = userCode.value.trim();
 
-// Code validation on restricted page
-codeForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const code = userCodeInput.value;
+    // Check if code is valid (You can replace this with your logic)
+    if (code === "1234") {
+      showTOSPopup();
+    } else {
+      errorMessage.classList.remove("hidden");
+    }
+  });
 
-  if (otps.has(code)) {
-    // Show TOS Popup after correct code
+  // Handling TOS acceptance
+  const tosPopup = document.getElementById("tos-popup");
+  const tosAcceptButton = document.getElementById("tos-accept-btn");
+  const tosCheckbox = document.getElementById("tos-accept");
+
+  tosCheckbox.addEventListener("change", function () {
+    tosAcceptButton.disabled = !tosCheckbox.checked;
+  });
+
+  tosAcceptButton.addEventListener("click", function () {
+    if (tosCheckbox.checked) {
+      tosPopup.classList.add("hidden");
+      // You can now give access to the restricted content
+      alert("Access granted!");
+    }
+  });
+
+  // Show TOS popup
+  function showTOSPopup() {
     tosPopup.classList.remove("hidden");
-  } else {
-    // Show error if the code is invalid
-    errorMessage.classList.remove("hidden");
-  }
-});
-
-// Enable accept button only when checkbox is checked
-tosAcceptCheckbox.addEventListener("change", () => {
-  tosAcceptButton.disabled = !tosAcceptCheckbox.checked;
-});
-
-// Handle TOS acceptance
-tosAcceptButton.addEventListener("click", () => {
-  if (tosAcceptCheckbox.checked) {
-    tosPopup.classList.add("hidden");
-    alert("Access granted! Welcome to the restricted area.");
-    // Here you can display content after accepting TOS
   }
 });
