@@ -281,17 +281,35 @@ header nav ul li a:hover {
 }
 
 .restricted-post {
-    background-color: #f1f1f1;
-    border: 2px solid #ddd;
+    background-color: #f1f1f1; /* Light grey background */
+    border: 2px solid #ddd; /* Grey border */
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
 }
 
 .restricted-post h3 {
-    color: #8e44ad;
+    color: #8e44ad; /* Purple header color */
 }
 
 .restricted-post p {
+    font-size: 1.1rem;
+}
+
+/* New Grey Box for General Posts */
+.post {
+    background-color: #f1f1f1; /* Light grey background */
+    border: 2px solid #ddd; /* Grey border */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Slight shadow */
+}
+
+.post h3 {
+    color: #8e44ad; /* Purple header color */
+}
+
+.post p {
     font-size: 1.1rem;
 }
