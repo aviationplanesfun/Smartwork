@@ -150,6 +150,33 @@ footer {
     color: #777;
 }
 
+/* Specific styles for the restricted content page */
+#restricted-content-section {
+    margin-top: 50px;
+}
+
+.folder-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.folder-button {
+    background-color: #3498db; /* Blue background */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.folder-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
 /* Post Styling */
 #posts-container {
     display: flex;
@@ -185,27 +212,4 @@ footer {
 .post small {
     font-size: 1rem;
     color: #777;
-}
-
-/* Folder Button Styling */
-.folder-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.folder-button {
-    background-color: #3498db; /* Blue background */
-    color: white;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.folder-button:hover {
-    background-color: #2980b9;
-    transform: scale(1.05);
 }
