@@ -7,15 +7,15 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to right, #3498db, #8e44ad); /* Gradient background */
-    color: #fff;
+    background-color: #fff; /* White background */
+    color: #333;
     padding: 20px;
     line-height: 1.6;
 }
 
 h1, h2, h3 {
     font-family: 'Helvetica Neue', sans-serif;
-    color: #fff;
+    color: #333;
 }
 
 /* Header Styles */
@@ -31,43 +31,6 @@ header .logo h1 {
     font-weight: bold;
 }
 
-/* Terms of Service Popup */
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
-    text-align: center;
-}
-
-.popup button {
-    margin-top: 20px;
-    background-color: #3498db;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.popup button:hover {
-    background-color: #2C3E50;
-}
-
 /* Pricing Plans Section */
 #pricing-plans {
     display: flex;
@@ -77,8 +40,9 @@ header .logo h1 {
 }
 
 .pricing-plan {
-    background-color: #fff;
+    background-color: white;
     color: #333;
+    border: 2px solid #8e44ad; /* Purple outline */
     border-radius: 10px;
     padding: 20px;
     text-align: center;
@@ -92,7 +56,7 @@ header .logo h1 {
 .pricing-plan h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #3498db;
+    color: #8e44ad; /* Purple color */
 }
 
 .pricing-plan p {
@@ -115,64 +79,33 @@ header .logo h1 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Code Entry Section */
-#access-code-section {
-    margin-top: 50px;
+/* Enter Code Button */
+#enter-code-section {
     text-align: center;
+    margin-top: 50px;
 }
 
-#access-code-section input {
-    padding: 10px;
-    font-size: 1rem;
-    margin-right: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-#access-code-section button {
-    padding: 10px 20px;
-    background-color: #3498db;
+#enter-code-section button {
+    padding: 12px 25px;
+    background-color: #8e44ad; /* Purple background */
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-#access-code-section button:hover {
-    background-color: #2C3E50;
+#enter-code-section button:hover {
+    background-color: #9b59b6;
 }
 
-/* Post Section */
-#post-section.hidden {
-    display: none;
-}
-
-#post-section {
+/* Footer Section */
+footer {
     margin-top: 50px;
-}
-
-#posts-container {
-    margin-top: 20px;
-}
-
-.post {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.post h4 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.post p {
-    font-size: 1rem;
-    color: #555;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
 }
 
 /* Animations */
