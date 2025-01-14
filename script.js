@@ -27,7 +27,8 @@ loginForm.addEventListener("submit", (e) => {
     sessionStorage.setItem("loggedIn", "true");
     loginError.classList.add("hidden");
     hideAllSections();
-    tosSection.classList.remove("hidden");
+    tosSection.classList.remove("section-hidden");
+    tosSection.classList.add("section-visible");
   } else {
     loginError.classList.remove("hidden");
   }
@@ -36,7 +37,8 @@ loginForm.addEventListener("submit", (e) => {
 proceedButton.addEventListener("click", () => {
   if (tosCheckbox.checked) {
     hideAllSections();
-    restrictedSection.classList.remove("hidden");
+    restrictedSection.classList.remove("section-hidden");
+    restrictedSection.classList.add("section-visible");
     contentContainer.innerHTML = restrictedContent;
   } else {
     alert("You must accept the Terms of Service to proceed.");
@@ -46,11 +48,13 @@ proceedButton.addEventListener("click", () => {
 logoutButton.addEventListener("click", () => {
   sessionStorage.removeItem("loggedIn");
   hideAllSections();
-  document.getElementById("home").classList.remove("hidden");
+  document.getElementById("home").classList.remove("section-hidden");
+  document.getElementById("home").classList.add("section-visible");
 });
 
 function hideAllSections() {
   document.querySelectorAll("section").forEach((section) => {
-    section.classList.add("hidden");
+    section.classList.add("section-hidden");
   });
 }
+
