@@ -119,19 +119,43 @@ header nav a:hover {
   margin: 10px 0;
 }
 
-/* Restricted Section */
-#restricted {
-  text-align: center;
-  padding: 40px 20px;
+/* TOS Popup */
+.tos-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 1s ease-in-out;
 }
 
-#restricted #content-container {
-  margin: 20px auto;
-  max-width: 800px;
-  text-align: left;
+.tos-popup-content {
+  background: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  overflow-y: auto;
+  max-height: 70%;
 }
 
-/* Buttons */
+.tos-text {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.tos-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
 button {
   background: #6a11cb;
   color: #fff;
@@ -166,4 +190,3 @@ button:hover {
     transform: translateY(0);
   }
 }
-
