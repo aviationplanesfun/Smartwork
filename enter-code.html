@@ -34,11 +34,11 @@
         <div class="popup-content">
             <h3>Terms of Service</h3>
             <p>Please read and accept the Terms of Service to continue.</p>
-            <p>1. DO NOT SHARE ANYTHING THAT YOU WILL SEE ON THE NEXT PAGE FAILURE TO DO SO MIGHT RESULT IN A BAN FROM THE SERVICE</p>
-            <p>2. WE OWN EVERYTHING WHAT YOU SEE AND ITS PROTECTED BY COPYRIGHT LAW DO NOT DISTRUBUTE</p>
-            <p>3. YOU ARE NOT ALLOWED TO TELL ANYONE ABOUT THIS SERVICE'S EXISTENCE THAT MAY CAUSE THE OWNERS HARM</p>
-            <p>4. WE ARE NOT RESPONSIBLE FOR ANY DAMAGE THAT MIGHT HAPPEN WHLE USING THIS SERVICE.</p>
-            <p>© SMARTWORK 2025 DO NOT DISTRUBUTE IN ANY WAY</p>
+            <p>1. DO NOT SHARE ANYTHING THAT YOU WILL SEE ON THE NEXT PAGE. FAILURE TO DO SO MIGHT RESULT IN A BAN FROM THE SERVICE.</p>
+            <p>2. WE OWN EVERYTHING YOU SEE AND IT'S PROTECTED BY COPYRIGHT LAW. DO NOT DISTRIBUTE.</p>
+            <p>3. YOU ARE NOT ALLOWED TO TELL ANYONE ABOUT THIS SERVICE'S EXISTENCE THAT MAY CAUSE THE OWNERS HARM.</p>
+            <p>4. WE ARE NOT RESPONSIBLE FOR ANY DAMAGE THAT MIGHT HAPPEN WHILE USING THIS SERVICE.</p>
+            <p>© SMARTWORK 2025 DO NOT DISTRIBUTE IN ANY WAY.</p>
             <button id="accept-tos">Accept</button>
             <button onclick="declineTOS()">Decline</button>
         </div>
@@ -52,11 +52,13 @@
     <script>
         // Function to validate access code
         function validateCode() {
-            const correctCode = "aVV4nC", "s7cEmb", "cUf72q", "oBcaiT", "DKqRzU"; // Example code for validation
+            // Define a list of valid codes
+            const validCodes = ["aVV4nC", "s7cEmb", "cUf72q", "oBcaiT", "DKqRzU"];
             const userCode = document.getElementById('access-code').value;
 
-            if (userCode === correctCode) {
-                // Code is correct, show TOS popup
+            // Check if the entered code is in the list of valid codes
+            if (validCodes.includes(userCode)) {
+                // If the code is correct, show TOS popup
                 document.getElementById('tos-popup').style.display = 'flex';
             } else {
                 alert('Incorrect code. Please try again.');
