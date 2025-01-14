@@ -3,45 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smartwork - Home</title>
+    <title>Smartwork - Homepage</title>
     <link rel="stylesheet" href="shared.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Main Content -->
+    <!-- Terms of Service Popup -->
+    <div id="tos-popup" class="popup">
+        <div class="popup-content">
+            <h2>Terms of Service</h2>
+            <p>By using this site, you agree to our terms and conditions...</p>
+            <button id="accept-tos">Accept</button>
+        </div>
+    </div>
+
+    <!-- Header Section -->
     <header>
         <div class="logo">
             <h1>Smartwork</h1>
         </div>
     </header>
 
-    <section class="pricing">
-        <h2>Choose Your Plan</h2>
-        <div class="plan">
-            <h3>Basic Plan</h3>
-            <p class="price">10€ / month</p>
-            <ul class="perks">
-                <li>1 Website</li>
-                <li>Basic Support</li>
-                <li>Limited Features</li>
+    <!-- Pricing Plans Section -->
+    <section id="pricing-plans">
+        <div class="pricing-plan" id="plan-10">
+            <h2>10€ Plan</h2>
+            <p>Some amazing perks for this plan.</p>
+            <p>Includes:</p>
+            <ul>
+                <li>Access to basic features</li>
+                <li>Limited support</li>
             </ul>
-            <button>Get Started</button>
         </div>
-        <div class="plan premium">
-            <h3>Premium Plan</h3>
-            <p class="price">15€ / month</p>
-            <ul class="perks">
-                <li>Unlimited Websites</li>
-                <li>Priority Support</li>
-                <li>All Features Included</li>
+        <div class="pricing-plan" id="plan-15">
+            <h2>15€ Plan</h2>
+            <p>Everything you need for maximum productivity.</p>
+            <p>Includes:</p>
+            <ul>
+                <li>Access to all features</li>
+                <li>Priority support</li>
             </ul>
-            <button>Get Started</button>
         </div>
     </section>
 
+    <!-- Posts Section -->
+    <section id="posts-section">
+        <h2>Latest Posts</h2>
+        <div id="posts-container">
+            <!-- Posts will be displayed here dynamically -->
+        </div>
+    </section>
+
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Smartwork. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
