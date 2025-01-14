@@ -34,16 +34,6 @@
     </footer>
 
     <script>
-        // Check if the user has accepted the TOS
-        if (localStorage.getItem('hasAcceptedTOS') === 'true') {
-            // User has accepted TOS, display content
-            document.getElementById('restricted-message').innerText = 'Welcome to the restricted area! Here is the content you have unlocked:';
-            displayPosts();
-        } else {
-            // User has not accepted TOS, show restricted message
-            document.getElementById('restricted-message').innerText = 'Restricted Content: Only accessible after accepting the Terms of Service and entering the correct code.';
-        }
-
         // Example posts for restricted content
         let posts = [
             {
@@ -75,6 +65,17 @@
                 postsContainer.appendChild(postElement);
             });
         }
+
+        // Check if the user has accepted the TOS and entered the correct code
+        if (localStorage.getItem('hasAcceptedTOS') === 'true') {
+            // User has accepted TOS, display content
+            document.getElementById('restricted-message').innerText = 'Welcome to the restricted area! Here is the content you have unlocked:';
+            displayPosts();
+        } else {
+            // User has not accepted TOS, show restricted message
+            document.getElementById('restricted-message').innerText = 'Restricted Content: Only accessible after accepting the Terms of Service and entering the correct code.';
+        }
     </script>
 </body>
 </html>
+
