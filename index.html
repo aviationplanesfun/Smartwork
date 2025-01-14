@@ -58,15 +58,30 @@
     <section id="login" class="hidden">
       <h2>Login</h2>
       <form id="login-form">
-        <label for="otp">Enter OTP:</label>
-        <input type="text" id="otp" required>
+        <label for="code">Enter Code:</label>
+        <input type="text" id="code" required>
         <button type="submit">Login</button>
-        <p id="login-error" class="error hidden">Invalid or used OTP. Try again.</p>
+        <p id="login-error" class="error hidden">Invalid or used code. Please try again.</p>
       </form>
     </section>
+    <section id="tos" class="hidden">
+      <h2>Please Accept Our Terms of Service</h2>
+      <p>To proceed, you must accept our terms of service.</p>
+      <a href="tos.html" target="_blank">Read Terms of Service</a>
+      <div>
+        <input type="checkbox" id="tos-check">
+        <label for="tos-check">I accept the Terms of Service</label>
+      </div>
+      <button id="proceed">Proceed</button>
+    </section>
     <section id="restricted" class="hidden">
-      <h2>Welcome to the Restricted Page</h2>
-      <p>You have successfully logged in and agreed to the terms of service.</p>
+      <h2>Welcome to the Members' Page</h2>
+      <div id="posts-container">
+        <h3>Posts</h3>
+        <div id="posts"></div>
+        <textarea id="new-post" placeholder="Write a new post..."></textarea>
+        <button id="add-post">Add Post</button>
+      </div>
       <button id="logout">Log Out</button>
     </section>
   </main>
@@ -76,4 +91,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
