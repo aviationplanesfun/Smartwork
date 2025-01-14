@@ -18,14 +18,16 @@ h1, h2, h3 {
     color: #333;
 }
 
-/* Header Section with Grey-ish Banner */
+/* Header Section with Smartwork name on left and buttons on right */
 header {
     background-color: #d3d3d3; /* Grey-ish background */
     color: #333;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Align logo and nav to opposite sides */
+    align-items: center;
     width: 80%; /* Narrower width */
-    margin: 0 auto; /* Center the banner */
+    margin: 0 auto; /* Center the header */
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slight shadow */
 }
@@ -33,6 +35,29 @@ header {
 header .logo h1 {
     font-size: 2.5rem;
     font-weight: bold;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #8e44ad; /* Purple on hover */
+    color: white;
 }
 
 /* Pricing Plans Section */
