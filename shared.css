@@ -88,54 +88,7 @@ header nav a:hover {
   color: #333;
 }
 
-/* Login Container */
-.login-container {
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  margin: 0 auto;
-}
-
-.login-container input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-.login-container button {
-  background: #6a11cb;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.login-container button:hover {
-  background: #2575fc;
-}
-
-.error {
-  color: red;
-  font-size: 0.9rem;
-  margin-top: 10px;
-}
-
-.error.hidden {
-  display: none;
-}
-
-/* Restricted Section */
-#restricted {
-  padding: 40px 20px;
-  text-align: center;
-}
-
+/* Code Form (Restricted Page) */
 #code-form-container {
   padding: 20px;
   background: #fff;
@@ -167,6 +120,7 @@ header nav a:hover {
   background: #2575fc;
 }
 
+/* TOS Popup */
 .tos-popup {
   position: fixed;
   top: 0;
