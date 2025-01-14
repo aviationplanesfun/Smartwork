@@ -11,6 +11,7 @@ body {
     color: #333;
     padding: 20px;
     line-height: 1.6;
+    text-align: center; /* Default text-align to center for content */
 }
 
 h1, h2, h3 {
@@ -18,10 +19,10 @@ h1, h2, h3 {
     color: #333;
 }
 
-/* Header Section with Smartwork name on left and buttons on right */
+/* Header Section with Gradient Blue Banner */
 header {
-    background-color: #d3d3d3; /* Grey-ish background */
-    color: #333;
+    background: linear-gradient(90deg, #3498db, #8e44ad); /* Blue gradient */
+    color: white;
     padding: 20px;
     display: flex;
     justify-content: space-between; /* Align logo and nav to opposite sides */
@@ -48,16 +49,16 @@ header nav ul li {
 
 header nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-size: 1.2rem;
     padding: 8px 12px;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 header nav ul li a:hover {
-    background-color: #8e44ad; /* Purple on hover */
-    color: white;
+    background-color: #9b59b6; /* Purple on hover */
+    transform: scale(1.05);
 }
 
 /* Pricing Plans Section */
@@ -108,13 +109,9 @@ header nav ul li a:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Enter Code Button */
-#enter-code-section {
-    text-align: center;
-    margin-top: 50px;
-}
-
-#enter-code-section button {
+/* Enter Code Button and Other Buttons */
+#enter-code-section button,
+header nav ul li a {
     padding: 12px 25px;
     background-color: #8e44ad; /* Purple background */
     color: white;
@@ -125,7 +122,8 @@ header nav ul li a:hover {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#enter-code-section button:hover {
+#enter-code-section button:hover,
+header nav ul li a:hover {
     background-color: #9b59b6;
     transform: scale(1.05);
 }
@@ -142,4 +140,40 @@ footer {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+/* Centered Content for Enter Code Page */
+#enter-code-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#enter-code-section input {
+    padding: 10px;
+    width: 250px;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+#enter-code-section input:focus {
+    outline: none;
+    border-color: #8e44ad;
+}
+
+#enter-code-section .code-button {
+    padding: 12px 25px;
+    background-color: #3498db; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#enter-code-section .code-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
 }
