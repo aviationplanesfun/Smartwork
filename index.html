@@ -11,12 +11,12 @@
   <header>
     <h1>Smartwork</h1>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#restricted-link">Restricted</a>
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#restricted-link" class="nav-link">Restricted</a>
     </nav>
   </header>
   <main>
-    <section id="home">
+    <section id="home" class="section-visible">
       <div class="content">
         <h2>Welcome to Smartwork</h2>
         <p>Optimize your workflow and get access to exclusive tools with Smartwork.</p>
@@ -31,6 +31,7 @@
               <li>Access to basic tools</li>
               <li>Email support</li>
             </ul>
+            <button>Choose Plan</button>
           </div>
           <div class="pricing-card premium">
             <h3>Premium Plan</h3>
@@ -40,6 +41,7 @@
               <li>Priority support</li>
               <li>Advanced analytics</li>
             </ul>
+            <button>Choose Plan</button>
           </div>
           <div class="pricing-card">
             <h3>Pro Plan</h3>
@@ -49,11 +51,12 @@
               <li>Dedicated account manager</li>
               <li>24/7 support</li>
             </ul>
+            <button>Choose Plan</button>
           </div>
         </div>
       </div>
     </section>
-    <section id="login" class="hidden">
+    <section id="login" class="section-hidden">
       <h2>Login</h2>
       <form id="login-form">
         <label for="code">Enter Code:</label>
@@ -62,7 +65,7 @@
         <p id="login-error" class="error hidden">Invalid or used code. Please try again.</p>
       </form>
     </section>
-    <section id="tos" class="hidden">
+    <section id="tos" class="section-hidden">
       <h2>Please Accept Our Terms of Service</h2>
       <p>To proceed, you must accept our terms of service.</p>
       <a href="tos.html" target="_blank">Read Terms of Service</a>
@@ -72,7 +75,7 @@
       </div>
       <button id="proceed">Proceed</button>
     </section>
-    <section id="restricted" class="hidden">
+    <section id="restricted" class="section-hidden">
       <h2>Welcome to the Members' Page</h2>
       <div id="content-container">
         <!-- Add your content (images and text) directly in the script.js file -->
@@ -86,4 +89,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
