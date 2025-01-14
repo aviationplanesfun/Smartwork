@@ -64,7 +64,7 @@
             const userCode = document.getElementById('access-code').value;
 
             // Check if the entered code is in the list of valid codes
-            if (validCodes[userCode]) {
+            if (validCodes.hasOwnProperty(userCode)) {
                 // If the code is correct, show TOS popup
                 document.getElementById('tos-popup').style.display = 'flex';
 
@@ -95,7 +95,3 @@
     </script>
 </body>
 </html>
-
-</body>
-</html>
-
