@@ -73,7 +73,6 @@
                 { id: 5, title: "Themenkalender", content: "Noch nichts", timestamp: "Januar 14, 2025 16:37" },
                 { id: 6, title: "Themenkalender", content: "Noch nichts", timestamp: "January 09, 2025 05:30 AM" }
             ]
-            
         };
 
         // Function to display posts based on the selected folder
@@ -105,28 +104,26 @@
 
             // Hide/show folder buttons based on the user plan
             if (userCode === 'Light') {
-                // Show only light plan content
-                document.getElementById('folder1-button').style.display = 'block'; // Hausaufgaben Lösungen
-                document.getElementById('folder2-button').style.display = 'block'; // Olganizer
+                // Hide folders not accessible to the light plan
                 document.getElementById('folder3-button').style.display = 'none';  // Themenkalender
                 document.getElementById('folder4-button').style.display = 'none';  // Schulordner
-                document.getElementById('folder5-button').style.display = 'none';  // Klassenarbeit notizen
+                document.getElementById('folder5-button').style.display = 'none';  // Klassenarbeit Notizen
                 document.getElementById('folder6-button').style.display = 'none';  // Klassenarbeits Trainer
                 document.getElementById('folder7-button').style.display = 'none';  // Pro Videos
 
-                // Hide content for light plan
-                document.getElementById('folder3-button').style.display = 'none';  // Themenkalender
-                document.getElementById('folder4-button').style.display = 'none';  // Schulordner
-                document.getElementById('folder5-button').style.display = 'none';  // Klassenarbeit notizen
-                document.getElementById('folder6-button').style.display = 'none';  // Klassenarbeits Trainer
-                document.getElementById('folder7-button').style.display = 'none';  // Pro Videos
+                // Hide posts for folders not accessible to the light plan
+                delete posts.folder3;
+                delete posts.folder4;
+                delete posts.folder5;
+                delete posts.folder6;
+                delete posts.folder7;
             } else if (userCode === 'Classic') {
                 // Show classic plan content
                 document.getElementById('folder1-button').style.display = 'block'; // Hausaufgaben Lösungen
                 document.getElementById('folder2-button').style.display = 'block'; // Olganizer
                 document.getElementById('folder3-button').style.display = 'none';  // Themenkalender
                 document.getElementById('folder4-button').style.display = 'block';  // Schulordner
-                document.getElementById('folder5-button').style.display = 'none';  // Klassenarbeit notizen
+                document.getElementById('folder5-button').style.display = 'none';  // Klassenarbeit Notizen
                 document.getElementById('folder6-button').style.display = 'none';  // Klassenarbeits Trainer
                 document.getElementById('folder7-button').style.display = 'none';  // Pro Videos
             } else if (userCode === 'Elite') {
@@ -135,7 +132,7 @@
                 document.getElementById('folder2-button').style.display = 'block'; // Olganizer
                 document.getElementById('folder3-button').style.display = 'block';  // Themenkalender
                 document.getElementById('folder4-button').style.display = 'block';  // Schulordner
-                document.getElementById('folder5-button').style.display = 'block';  // Klassenarbeit notizen
+                document.getElementById('folder5-button').style.display = 'block';  // Klassenarbeit Notizen
                 document.getElementById('folder6-button').style.display = 'block';  // Klassenarbeits Trainer
                 document.getElementById('folder7-button').style.display = 'block';  // Pro Videos
             }
