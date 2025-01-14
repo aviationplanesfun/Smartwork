@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smartwork - Restricted</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <header>
     <h1>Smartwork</h1>
     <nav>
@@ -18,15 +19,12 @@
 
   <main>
     <section id="restricted">
-      <h2>Restricted Area</h2>
+      <h2>Enter Access Code</h2>
 
-      <!-- Code Form -->
+      <!-- Code Input Form -->
       <div id="code-form-container">
-        <h3>Enter Code to Access</h3>
-        <form id="code-form">
-          <input type="text" id="user-code" placeholder="Enter your code" required>
-          <button type="submit">Submit</button>
-        </form>
+        <input type="text" id="user-code" placeholder="Enter your code" required>
+        <button id="submit-code">Submit</button>
         <p id="error-message" class="hidden error">Invalid or used code. Please try again.</p>
       </div>
 
@@ -34,12 +32,11 @@
       <div id="tos-popup" class="tos-popup hidden">
         <div class="tos-popup-content">
           <h2>Terms of Service</h2>
-          <p>Please read our terms of service below:</p>
           <div class="tos-text">
-            <p>Your terms of service content goes here. Please make sure it's long enough to require scrolling.</p>
-            <p>... More content ...</p>
-            <p>... More content ...</p>
-            <p>... More content ...</p>
+            <p>Terms of Service content goes here. You need to scroll down to read all terms.</p>
+            <p>More content...</p>
+            <p>More content...</p>
+            <p>More content...</p>
           </div>
           <div class="tos-footer">
             <input type="checkbox" id="tos-accept" />
@@ -49,10 +46,10 @@
         </div>
       </div>
 
-      <!-- Content after accepting TOS -->
+      <!-- Restricted Content (hidden initially) -->
       <div id="restricted-content" class="hidden">
-        <h3>Welcome to the Restricted Content!</h3>
-        <p>Here is your exclusive content after accepting the TOS.</p>
+        <h3>Welcome to the Restricted Area!</h3>
+        <p>You have successfully gained access after accepting the TOS.</p>
       </div>
     </section>
   </main>
