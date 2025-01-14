@@ -31,6 +31,7 @@ header {
     margin: 0 auto; /* Center the header */
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slight shadow */
+    border: 2px solid #8e44ad; /* Purple border */
 }
 
 header .logo h1 {
@@ -65,6 +66,9 @@ header nav ul li a:hover {
 #enter-code-section {
     text-align: center;
     margin-top: 50px;
+    border: 2px solid #8e44ad; /* Purple border */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 #enter-code-section input {
@@ -119,6 +123,7 @@ header nav ul li a:hover {
     max-width: 400px;
     width: 100%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #8e44ad; /* Purple border */
 }
 
 .popup-content h3 {
@@ -148,6 +153,8 @@ footer {
     text-align: center;
     font-size: 0.9rem;
     color: #777;
+    border-top: 2px solid #8e44ad; /* Purple border */
+    padding-top: 20px;
 }
 
 /* Pricing Plans Section */
@@ -210,6 +217,7 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: 20px;
+    border: 2px solid #8e44ad; /* Purple border */
 }
 
 .plan-button:hover {
@@ -228,6 +236,7 @@ header nav ul li a {
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 2px solid #8e44ad; /* Purple border */
 }
 
 #enter-code-section button:hover,
@@ -249,3 +258,53 @@ header nav ul li a:hover {
     }
 }
 
+/* Restricted Section Styles */
+#restricted-page {
+    margin-top: 50px;
+    text-align: center;
+    border: 2px solid #8e44ad; /* Purple border */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.folder-button {
+    background-color: #8e44ad;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 2px solid #8e44ad; /* Purple border */
+}
+
+.folder-button:hover {
+    background-color: #9b59b6;
+    transform: scale(1.05);
+}
+
+.restricted-posts {
+    display: none;
+    margin-top: 30px;
+}
+
+.restricted-posts.active {
+    display: block;
+}
+
+.restricted-post {
+    background-color: #f1f1f1;
+    border: 2px solid #8e44ad; /* Purple border */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.restricted-post h3 {
+    color: #8e44ad;
+}
+
+.restricted-post p {
+    font-size: 1.1rem;
+}
