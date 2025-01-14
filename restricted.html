@@ -3,28 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smartwork - Restricted Area</title>
-    <link rel="stylesheet" href="shared.css">
+    <title>Smartwork - Restricted Page</title>
+    <link rel="stylesheet" href="shared.css"> <!-- Ensure the path to shared.css is correct -->
     <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Header Section with Gradient Blue Banner -->
     <header>
         <div class="logo">
-            <h1>Smartwork - Restricted Area</h1>
+            <h1>Smartwork</h1>
         </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="enter-code.html">Enter Code</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Post Section (Visible after TOS acceptance) -->
-<!-- Example of adding a post -->
-<section class="post">
-    <h3>TEST</h3>
-    <p>TEST</p>
-</section>
-    
+    <!-- Restricted Content -->
+    <section id="restricted-content">
+        <h2>Restricted Content</h2>
+        <p>Only accessible after accepting the Terms of Service and entering the correct code.</p>
+        <!-- Add your restricted content here -->
+    </section>
+
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Smartwork. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Check if the user has accepted the TOS
+        if (!localStorage.getItem("tosAccepted")) {
+            alert("You must accept the Terms of Service to access this page.");
+            window.location.href = "enter-code.html"; // Redirect to enter code page if not accepted
+        }
+    </script>
 </body>
 </html>
 
