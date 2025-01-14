@@ -1,97 +1,56 @@
-// Helper functions for cookies
-function setCookie(name, value, days) {
-  const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
-  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
-}
-
-function getCookie(name) {
-  const cookies = document.cookie.split("; ");
-  for (let cookie of cookies) {
-    const [key, value] = cookie.split("=");
-    if (key === name) return value;
-  }
-  return null;
-}
-
-// Mock data for OTPs
-const otps = new Set(["12345", "67890"]); // Predefined OTPs
-
-// References to sections and links
-const homeSection = document.getElementById("home");
-const pricingSection = document.getElementById("pricing");
-const restrictedSection = document.getElementById("restricted");
-const loginSection = document.getElementById("login");
-
-const homeLink = document.getElementById("home-link");
-const pricingLink = document.getElementById("pricing-link");
-const restrictedLink = document.getElementById("restricted-link");
-
+const otps = new Set(["12345", "67890"]);
 const loginForm = document.getElementById("login-form");
-const otpInput = document.getElementById("otp");
+const codeInput = document.getElementById("code");
 const loginError = document.getElementById("login-error");
 
+const tosSection = document.getElementById("tos");
+const tosCheckbox = document.getElementById("tos-check");
+const proceedButton = document.getElementById("proceed");
+
+const restrictedSection = document.getElementById("restricted");
+const contentContainer = document.getElementById("content-container");
 const logoutButton = document.getElementById("logout");
 
-// Hide all sections
-function hideAllSections() {
-  homeSection.classList.add("hidden");
-  pricingSection.classList.add("hidden");
-  restrictedSection.classList.add("hidden");
-  loginSection.classList.add("hidden");
-}
+// Predefined content for the restricted page
+const restrictedContent = `
+  <h3>Exclusive Member Content</h3>
+  <p>Welcome to the exclusive area. Here's your content:</p>
+  <img src="https://via.placeholder.com/600x300" alt="Exclusive Image" />
+  <p>This is an example of how you can add text and images here.</p>
+`;
 
-// Show a section
-function showSection(section) {
-  section.classList.remove("hidden");
-}
-
-// Navigation
-homeLink.addEventListener("click", () => {
-  hideAllSections();
-  showSection(homeSection);
-});
-
-pricingLink.addEventListener("click", () => {
-  hideAllSections();
-  showSection(pricingSection);
-});
-
-restrictedLink.addEventListener("click", () => {
-  if (sessionStorage.getItem("loggedIn")) {
-    hideAllSections();
-    showSection(restrictedSection);
-  } else {
-    hideAllSections();
-    showSection(loginSection);
-  }
-});
-
-// Login logic
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const otp = otpInput.value;
+  const code = codeInput.value;
 
-  const usedOtps = JSON.parse(getCookie("usedOtps") || "[]");
-
-  if (otps.has(otp) && !usedOtps.includes(otp)) {
-    usedOtps.push(otp); // Mark OTP as used
-    setCookie("usedOtps", JSON.stringify(usedOtps), 7); // Save for 7 days
+  if (otps.has(code)) {
     sessionStorage.setItem("loggedIn", "true");
+    loginError.classList.add("hidden");
     hideAllSections();
-    showSection(restrictedSection);
+    tosSection.classList.remove("hidden");
   } else {
     loginError.classList.remove("hidden");
   }
 });
 
-// Logout
+proceedButton.addEventListener("click", () => {
+  if (tosCheckbox.checked) {
+    hideAllSections();
+    restrictedSection.classList.remove("hidden");
+    contentContainer.innerHTML = restrictedContent;
+  } else {
+    alert("You must accept the Terms of Service to proceed.");
+  }
+});
+
 logoutButton.addEventListener("click", () => {
   sessionStorage.removeItem("loggedIn");
   hideAllSections();
-  showSection(homeSection);
+  document.getElementById("home").classList.remove("hidden");
 });
 
-// Initialize default section
-document.addEventListener("DOMContentLoaded", () => {
-  showSection(homeSection);
-});
+function hideAllSections() {
+  document.querySelectorAll("section").forEach((section) => {
+    section.classList.add("hidden");
+  });
+}
