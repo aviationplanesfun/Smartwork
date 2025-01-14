@@ -61,88 +61,7 @@ header nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Pricing Plans Section */
-#pricing-plans {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.pricing-plan {
-    background-color: white;
-    color: #333;
-    border: 2px solid #8e44ad; /* Purple outline */
-    border-radius: 10px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Increased width */
-    margin: 0 20px;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-}
-
-.pricing-plan h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #8e44ad; /* Purple color */
-}
-
-.pricing-plan p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.pricing-plan ul {
-    list-style: none;
-    padding: 0;
-}
-
-.pricing-plan li {
-    font-size: 1.1rem;
-    margin: 10px 0;
-}
-
-.pricing-plan:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Enter Code Button and Other Buttons */
-#enter-code-section button,
-header nav ul li a {
-    padding: 12px 25px;
-    background-color: #8e44ad; /* Purple background */
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#enter-code-section button:hover,
-header nav ul li a:hover {
-    background-color: #9b59b6;
-    transform: scale(1.05);
-}
-
-/* Footer Section */
-footer {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #777;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Centered Content for Enter Code Page */
+/* Enter Code Section */
 #enter-code-section {
     text-align: center;
     margin-top: 50px;
@@ -221,4 +140,12 @@ footer {
 .popup-content button:hover {
     background-color: #2980b9;
     transform: scale(1.05);
+}
+
+/* Footer Section */
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
 }
