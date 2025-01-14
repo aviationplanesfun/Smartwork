@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smartwork - Restricted Page</title>
+    <title>Smartwork - Restricted Content</title>
     <link rel="stylesheet" href="shared.css"> <!-- Ensure the path to shared.css is correct -->
-    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header Section with Gradient Blue Banner -->
@@ -17,15 +16,16 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="enter-code.html">Enter Code</a></li>
+                <li><a href="restricted.html">Restricted Content</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Restricted Content -->
-    <section id="restricted-content">
+    <!-- Restricted Content Section -->
+    <section id="restricted-content-section">
         <h2>Restricted Content</h2>
-        <p>Only accessible after accepting the Terms of Service and entering the correct code.</p>
-        <!-- Add your restricted content here -->
+        <p id="restricted-message"></p>
+        <div id="posts-container"></div>
     </section>
 
     <!-- Footer Section -->
@@ -35,11 +35,46 @@
 
     <script>
         // Check if the user has accepted the TOS
-        if (!localStorage.getItem("tosAccepted")) {
-            alert("You must accept the Terms of Service to access this page.");
-            window.location.href = "enter-code.html"; // Redirect to enter code page if not accepted
+        if (localStorage.getItem('hasAcceptedTOS') === 'true') {
+            // User has accepted TOS, display content
+            document.getElementById('restricted-message').innerText = 'Welcome to the restricted area! Here is the content you have unlocked:';
+            displayPosts();
+        } else {
+            // User has not accepted TOS, show restricted message
+            document.getElementById('restricted-message').innerText = 'Restricted Content: Only accessible after accepting the Terms of Service and entering the correct code.';
+        }
+
+        // Example posts for restricted content
+        let posts = [
+            {
+                id: 1,
+                title: "Welcome to Smartwork!",
+                content: "This is your first post in the restricted area. You can modify the posts directly in the code.",
+                timestamp: new Date().toLocaleString()
+            },
+            {
+                id: 2,
+                title: "New Features Coming Soon",
+                content: "We're working on adding new features to Smartwork. Stay tuned for updates.",
+                timestamp: new Date().toLocaleString()
+            }
+        ];
+
+        // Function to display posts on the restricted page
+        function displayPosts() {
+            const postsContainer = document.getElementById('posts-container');
+            postsContainer.innerHTML = ''; // Clear existing posts
+
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.classList.add('post');
+                postElement.innerHTML = `
+                    <h4>${post.title} - ${post.timestamp}</h4>
+                    <p>${post.content}</p>
+                `;
+                postsContainer.appendChild(postElement);
+            });
         }
     </script>
 </body>
 </html>
-
