@@ -47,7 +47,7 @@
     </footer>
 
     <script>
-        // Example posts for restricted content, categorized into 3 folders
+        // Example posts for restricted content, categorized into 7 folders
         let posts = {
             folder1: [
                 { id: 1, title: "Folder 1 Post 1", content: "This is the first post in Folder 1.", timestamp: "January 14, 2025 09:00 AM" },
@@ -62,16 +62,20 @@
                 { id: 6, title: "Themenkalender", content: "Noch nichts", timestamp: "January 09, 2025 05:30 AM" }
             ],
             folder4: [
-                { id: 1, title: "Folder 1 Post 1", content: "This is the first post in Folder 1.", timestamp: "January 14, 2025 09:00 AM" },
-                { id: 2, title: "Folder 1 Post 2", content: "This is the second post in Folder 1.", timestamp: "January 13, 2025 10:30 AM" }
+                { id: 7, title: "Folder 4 Post 1", content: "This is the first post in Folder 4.", timestamp: "January 14, 2025 09:00 AM" },
+                { id: 8, title: "Folder 4 Post 2", content: "This is the second post in Folder 4.", timestamp: "January 13, 2025 10:30 AM" }
             ],
             folder5: [
-                { id: 3, title: "Folder 2 Post 1", content: "This is the first post in Folder 2.", timestamp: "January 12, 2025 08:00 AM" },
-                { id: 4, title: "Folder 2 Post 2", content: "This is the second post in Folder 2.", timestamp: "January 11, 2025 07:30 AM" }
+                { id: 9, title: "Folder 5 Post 1", content: "This is the first post in Folder 5.", timestamp: "January 12, 2025 08:00 AM" },
+                { id: 10, title: "Folder 5 Post 2", content: "This is the second post in Folder 5.", timestamp: "January 11, 2025 07:30 AM" }
             ],
             folder6: [
-                { id: 5, title: "Themenkalender", content: "Noch nichts", timestamp: "Januar 14, 2025 16:37" },
-                { id: 6, title: "Themenkalender", content: "Noch nichts", timestamp: "January 09, 2025 05:30 AM" }
+                { id: 11, title: "Folder 6 Post 1", content: "This is the first post in Folder 6.", timestamp: "January 14, 2025 09:00 AM" },
+                { id: 12, title: "Folder 6 Post 2", content: "This is the second post in Folder 6.", timestamp: "January 13, 2025 10:30 AM" }
+            ],
+            folder7: [
+                { id: 13, title: "Folder 7 Post 1", content: "This is the first post in Folder 7.", timestamp: "January 14, 2025 09:00 AM" },
+                { id: 14, title: "Folder 7 Post 2", content: "This is the second post in Folder 7.", timestamp: "January 13, 2025 10:30 AM" }
             ]
         };
 
@@ -99,11 +103,11 @@
             // User has accepted TOS, display content
             document.getElementById('restricted-message').innerText = 'Welcome to the restricted area! Here are your folders:';
 
-            // Get the user code stored in localStorage
-            const userCode = localStorage.getItem('codeToPlan');
+            // Get the user plan stored in localStorage
+            const userPlan = localStorage.getItem('userPlan');
 
             // Hide/show folder buttons based on the user plan
-            if (userCode === 'Light') {
+            if (userPlan === 'Light') {
                 // Hide folders not accessible to the light plan
                 document.getElementById('folder3-button').style.display = 'none';  // Themenkalender
                 document.getElementById('folder4-button').style.display = 'none';  // Schulordner
@@ -117,7 +121,7 @@
                 delete posts.folder5;
                 delete posts.folder6;
                 delete posts.folder7;
-            } else if (userCode === 'Classic') {
+            } else if (userPlan === 'Classic') {
                 // Show classic plan content
                 document.getElementById('folder1-button').style.display = 'block'; // Hausaufgaben Lösungen
                 document.getElementById('folder2-button').style.display = 'block'; // Olganizer
@@ -126,7 +130,12 @@
                 document.getElementById('folder5-button').style.display = 'none';  // Klassenarbeit Notizen
                 document.getElementById('folder6-button').style.display = 'none';  // Klassenarbeits Trainer
                 document.getElementById('folder7-button').style.display = 'none';  // Pro Videos
-            } else if (userCode === 'Elite') {
+
+                delete posts.folder3;
+                delete posts.folder5;
+                delete posts.folder6;
+                delete posts.folder7;
+            } else if (userPlan === 'Elite') {
                 // Show elite plan content
                 document.getElementById('folder1-button').style.display = 'block'; // Hausaufgaben Lösungen
                 document.getElementById('folder2-button').style.display = 'block'; // Olganizer
@@ -146,3 +155,4 @@
     </script>
 </body>
 </html>
+
