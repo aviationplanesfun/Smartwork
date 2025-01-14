@@ -25,6 +25,15 @@
     <section id="restricted-content-section">
         <h2>Restricted Content</h2>
         <p id="restricted-message"></p>
+
+        <!-- Folder Buttons -->
+        <div class="folder-buttons">
+            <button class="folder-button" onclick="showPosts('folder1')">Folder 1</button>
+            <button class="folder-button" onclick="showPosts('folder2')">Folder 2</button>
+            <button class="folder-button" onclick="showPosts('folder3')">Folder 3</button>
+        </div>
+
+        <!-- Posts Container -->
         <div id="posts-container"></div>
     </section>
 
@@ -34,44 +43,75 @@
     </footer>
 
     <script>
-        // Example posts for restricted content
-        let posts = [
-            {
-                id: 1,
-                title: "Welcome to Smartwork!",
-                content: "This is your first post in the restricted area. You can modify the posts directly in the code.",
-                timestamp: "January 14, 2025 09:00 AM"  // Customizable timestamp
-            },
-            {
-                id: 2,
-                title: "New Features Coming Soon",
-                content: "We're working on adding new features to Smartwork. Stay tuned for updates.",
-                timestamp: "January 13, 2025 10:30 AM"  // Customizable timestamp
-            }
-        ];
+        // Example posts for restricted content, categorized into 3 folders
+        let posts = {
+            folder1: [
+                {
+                    id: 1,
+                    title: "Folder 1 Post 1",
+                    content: "This is the first post in Folder 1.",
+                    timestamp: "January 14, 2025 09:00 AM"
+                },
+                {
+                    id: 2,
+                    title: "Folder 1 Post 2",
+                    content: "This is the second post in Folder 1.",
+                    timestamp: "January 13, 2025 10:30 AM"
+                }
+            ],
+            folder2: [
+                {
+                    id: 3,
+                    title: "Folder 2 Post 1",
+                    content: "This is the first post in Folder 2.",
+                    timestamp: "January 12, 2025 08:00 AM"
+                },
+                {
+                    id: 4,
+                    title: "Folder 2 Post 2",
+                    content: "This is the second post in Folder 2.",
+                    timestamp: "January 11, 2025 07:30 AM"
+                }
+            ],
+            folder3: [
+                {
+                    id: 5,
+                    title: "Folder 3 Post 1",
+                    content: "This is the first post in Folder 3.",
+                    timestamp: "January 10, 2025 06:00 AM"
+                },
+                {
+                    id: 6,
+                    title: "Folder 3 Post 2",
+                    content: "This is the second post in Folder 3.",
+                    timestamp: "January 09, 2025 05:30 AM"
+                }
+            ]
+        };
 
-        // Function to display posts on the restricted page
-        function displayPosts() {
+        // Function to display posts based on the selected folder
+        function showPosts(folder) {
             const postsContainer = document.getElementById('posts-container');
             postsContainer.innerHTML = ''; // Clear existing posts
 
-            posts.forEach(post => {
-                const postElement = document.createElement('div');
-                postElement.classList.add('post');
-                postElement.innerHTML = `
-                    <h4>${post.title}</h4>
-                    <p>${post.content}</p>
-                    <small>${post.timestamp}</small>
-                `;
-                postsContainer.appendChild(postElement);
-            });
+            if (posts[folder]) {
+                posts[folder].forEach(post => {
+                    const postElement = document.createElement('div');
+                    postElement.classList.add('post');
+                    postElement.innerHTML = `
+                        <h4>${post.title}</h4>
+                        <p>${post.content}</p>
+                        <small>${post.timestamp}</small>
+                    `;
+                    postsContainer.appendChild(postElement);
+                });
+            }
         }
 
         // Check if the user has accepted the TOS and entered the correct code
         if (localStorage.getItem('hasAcceptedTOS') === 'true') {
             // User has accepted TOS, display content
-            document.getElementById('restricted-message').innerText = 'Welcome to the restricted area! Here is the content you have unlocked:';
-            displayPosts();
+            document.getElementById('restricted-message').innerText = 'Welcome to the restricted area! Here are your folders:';
         } else {
             // User has not accepted TOS, show restricted message
             document.getElementById('restricted-message').innerText = 'Restricted Content: Only accessible after accepting the Terms of Service and entering the correct code.';
@@ -79,5 +119,3 @@
     </script>
 </body>
 </html>
-
-
