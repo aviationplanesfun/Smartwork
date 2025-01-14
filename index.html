@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smartwork</title>
+  <title>Smartwork - Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="shared.css">
 </head>
 <body>
   <header>
     <h1>Smartwork</h1>
     <nav>
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#restricted-link" class="nav-link">Restricted</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="restricted.html" class="nav-link">Restricted</a>
     </nav>
   </header>
   <main>
@@ -21,74 +21,15 @@
         <h2>Welcome to Smartwork</h2>
         <p>Optimize your workflow and get access to exclusive tools with Smartwork.</p>
       </div>
-      <div class="pricing">
-        <h2>Our Pricing Plans</h2>
-        <div class="pricing-container">
-          <div class="pricing-card">
-            <h3>Basic Plan</h3>
-            <p class="price">$10/month</p>
-            <ul>
-              <li>Access to basic tools</li>
-              <li>Email support</li>
-            </ul>
-            <button>Choose Plan</button>
-          </div>
-          <div class="pricing-card premium">
-            <h3>Premium Plan</h3>
-            <p class="price">$25/month</p>
-            <ul>
-              <li>All Basic features</li>
-              <li>Priority support</li>
-              <li>Advanced analytics</li>
-            </ul>
-            <button>Choose Plan</button>
-          </div>
-          <div class="pricing-card">
-            <h3>Pro Plan</h3>
-            <p class="price">$50/month</p>
-            <ul>
-              <li>All Premium features</li>
-              <li>Dedicated account manager</li>
-              <li>24/7 support</li>
-            </ul>
-            <button>Choose Plan</button>
-          </div>
-        </div>
+      <div class="login-container">
+        <h2>Login with Code</h2>
+        <form id="login-form">
+          <label for="code">Enter Code:</label>
+          <input type="text" id="code" required>
+          <button type="submit">Login</button>
+          <p id="login-error" class="error hidden">Invalid or used code. Please try again.</p>
+        </form>
       </div>
-    </section>
-    <section id="login" class="section-hidden">
-      <h2>Login</h2>
-      <form id="login-form">
-        <label for="code">Enter Code:</label>
-        <input type="text" id="code" required>
-        <button type="submit">Login</button>
-        <p id="login-error" class="error hidden">Invalid or used code. Please try again.</p>
-      </form>
-    </section>
-    <!-- TOS Popup -->
-    <div id="tos-popup" class="tos-popup hidden">
-      <div class="tos-popup-content">
-        <h2>Terms of Service</h2>
-        <p>Please read our terms of service below:</p>
-        <div class="tos-text">
-          <p>Your terms of service content goes here. Please make sure it's long enough to require scrolling.</p>
-          <p>... More content ...</p>
-          <p>... More content ...</p>
-          <p>... More content ...</p>
-        </div>
-        <div class="tos-footer">
-          <input type="checkbox" id="tos-accept" />
-          <label for="tos-accept">I accept the Terms of Service</label>
-          <button id="tos-accept-btn" disabled>Accept</button>
-        </div>
-      </div>
-    </div>
-    <section id="restricted" class="section-hidden">
-      <h2>Welcome to the Members' Page</h2>
-      <div id="content-container">
-        <!-- Add your content (images and text) directly in the script.js file -->
-      </div>
-      <button id="logout">Log Out</button>
     </section>
   </main>
   <footer>
@@ -97,4 +38,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
