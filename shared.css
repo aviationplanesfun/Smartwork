@@ -18,12 +18,16 @@ h1, h2, h3 {
     color: #333;
 }
 
-/* Header Styles */
+/* Header Section with Grey-ish Banner */
 header {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 20px 0;
+    background-color: #d3d3d3; /* Grey-ish background */
+    color: #333;
+    padding: 20px;
     text-align: center;
+    width: 80%; /* Narrower width */
+    margin: 0 auto; /* Center the banner */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slight shadow */
 }
 
 header .logo h1 {
