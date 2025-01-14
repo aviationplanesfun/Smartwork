@@ -3,63 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pricing and Access</title>
+  <title>Smartwork</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Welcome to Our Service</h1>
-    <nav>
-      <a href="#" id="home-link">Home</a>
-      <a href="#" id="pricing-link">Pricing</a>
-      <a href="#" id="restricted-link">Restricted Page</a>
-    </nav>
+    <div class="container">
+      <h1>Smartwork</h1>
+      <nav>
+        <a href="#" id="home-link">Home</a>
+        <a href="#" id="pricing-link">Pricing</a>
+        <a href="#" id="restricted-link">Restricted</a>
+      </nav>
+    </div>
   </header>
 
   <main>
+    <!-- Home Section -->
     <section id="home">
-      <h2>Home</h2>
-      <p>Welcome to our service. Explore the perks and pricing below.</p>
+      <div class="container">
+        <h2>Welcome to Smartwork</h2>
+        <p>Boost your productivity with our exclusive plans. Sign up now to access premium features!</p>
+      </div>
     </section>
 
+    <!-- Pricing Section -->
     <section id="pricing" class="hidden">
-      <h2>Pricing</h2>
-      <div class="pricing-table">
-        <div class="pricing-card">
-          <h3>Basic Plan</h3>
-          <p>$10/month</p>
-          <ul>
-            <li>Feature 1</li>
-            <li>Feature 2</li>
-          </ul>
-        </div>
-        <div class="pricing-card">
-          <h3>Premium Plan</h3>
-          <p>$30/month</p>
-          <ul>
-            <li>Feature 1</li>
-            <li>Feature 2</li>
-            <li>Feature 3</li>
-          </ul>
+      <div class="container">
+        <h2>Our Pricing Plans</h2>
+        <div class="pricing-container">
+          <div class="pricing-card">
+            <h3>Basic Plan</h3>
+            <p class="price">$10/month</p>
+            <ul>
+              <li>Access to basic tools</li>
+              <li>Email support</li>
+            </ul>
+            <button>Get Started</button>
+          </div>
+          <div class="pricing-card premium">
+            <h3>Premium Plan</h3>
+            <p class="price">$30/month</p>
+            <ul>
+              <li>All basic features</li>
+              <li>Priority support</li>
+              <li>Advanced tools</li>
+            </ul>
+            <button>Get Started</button>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Restricted Section -->
     <section id="restricted" class="hidden">
-      <h2>Restricted Page</h2>
-      <p>This page is only accessible to logged-in users.</p>
+      <div class="container">
+        <h2>Restricted Page</h2>
+        <p>You must confirm the Terms of Service to access this page.</p>
+        <button id="confirm-tos">Confirm ToS</button>
+        <p id="tos-error" class="error hidden">You must confirm the ToS to access this page.</p>
+      </div>
     </section>
 
+    <!-- Login Section -->
     <section id="login" class="hidden">
-      <h2>Login</h2>
-      <form id="login-form">
-        <label for="otp">Enter OTP:</label>
-        <input type="text" id="otp" required>
-        <button type="submit">Login</button>
-      </form>
-      <p id="login-error" class="error hidden">Invalid or used OTP.</p>
+      <div class="container">
+        <h2>Login</h2>
+        <form id="login-form">
+          <label for="otp">Enter OTP:</label>
+          <input type="text" id="otp" required>
+          <button type="submit">Login</button>
+        </form>
+        <p id="login-error" class="error hidden">Invalid or used OTP.</p>
+      </div>
     </section>
   </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Smartwork. All Rights Reserved.</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
