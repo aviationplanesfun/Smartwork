@@ -50,26 +50,24 @@
     </footer>
 
     <script>
-        // Function to validate access code
+        // Function to validate access code and assign subscription plan
         function validateCode() {
-            // Define a list of valid codes with their corresponding plans
-            const validCodes = {
-                "aVV4nC": "light",
-                "s7cEmb": "classic",
-                "cUf72q": "elite",
-                "oBcaiT": "light",
-                "DKqRzU": "classic"
+            // Define a mapping of valid codes to subscription plans
+            const codeToPlan = {
+                "aVV4nC": "Light",   // Light plan code
+                "s7cEmb": "Classic",  // Classic plan code
+                "cUf72q": "Elite",    // Elite plan code
+                "oBcaiT": "Light",    // Light plan code
+                "DKqRzU": "Classic"   // Classic plan code
             };
-
             const userCode = document.getElementById('access-code').value;
 
-            // Check if the entered code is in the list of valid codes
-            if (validCodes.hasOwnProperty(userCode)) {
-                // If the code is correct, show TOS popup
+            // Check if the entered code is in the mapping
+            if (codeToPlan[userCode]) {
+                // Store the user's plan in localStorage
+                localStorage.setItem('userPlan', codeToPlan[userCode]);
+                // Show TOS popup
                 document.getElementById('tos-popup').style.display = 'flex';
-
-                // Store the user's code and associated plan in localStorage
-                localStorage.setItem('userCode', validCodes[userCode]);
             } else {
                 alert('Incorrect code. Please try again.');
             }
@@ -95,3 +93,4 @@
     </script>
 </body>
 </html>
+
