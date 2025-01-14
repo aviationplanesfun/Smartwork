@@ -30,7 +30,7 @@
     </section>
 
     <!-- Terms of Service Popup -->
-    <div id="tos-popup" class="popup" style="display:none;">
+    <div id="tos-popup" class="popup">
         <div class="popup-content">
             <h3>Terms of Service</h3>
             <p>Please read and accept the Terms of Service to continue.</p>
@@ -52,21 +52,24 @@
     <script>
         // Function to validate access code
         function validateCode() {
-            // Define a list of valid codes for each plan
-            const codes = {
-                "aVV4nC": "light", // Light Plan
-                "s7cEmb": "classic", // Classic Plan
-                "cUf72q": "elite", // Elite Plan
-                "oBcaiT": "light", // Light Plan
-                "DKqRzU": "classic" // Classic Plan
+            // Define a list of valid codes with their corresponding plans
+            const validCodes = {
+                "aVV4nC": "light",
+                "s7cEmb": "classic",
+                "cUf72q": "elite",
+                "oBcaiT": "light",
+                "DKqRzU": "classic"
             };
 
             const userCode = document.getElementById('access-code').value;
-            const planToShow = codes[userCode];
 
-            if (planToShow) {
-                // Show the Terms of Service popup
+            // Check if the entered code is in the list of valid codes
+            if (validCodes[userCode]) {
+                // If the code is correct, show TOS popup
                 document.getElementById('tos-popup').style.display = 'flex';
+
+                // Store the user's code and associated plan in localStorage
+                localStorage.setItem('userCode', validCodes[userCode]);
             } else {
                 alert('Incorrect code. Please try again.');
             }
@@ -90,6 +93,9 @@
             document.getElementById('tos-popup').style.display = 'none';
         }
     </script>
+</body>
+</html>
+
 </body>
 </html>
 
