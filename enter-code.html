@@ -30,7 +30,7 @@
     </section>
 
     <!-- Terms of Service Popup -->
-    <div id="tos-popup" class="popup">
+    <div id="tos-popup" class="popup" style="display:none;">
         <div class="popup-content">
             <h3>Terms of Service</h3>
             <p>Please read and accept the Terms of Service to continue.</p>
@@ -52,13 +52,20 @@
     <script>
         // Function to validate access code
         function validateCode() {
-            // Define a list of valid codes
-            const validCodes = ["aVV4nC", "s7cEmb", "cUf72q", "oBcaiT", "DKqRzU"];
-            const userCode = document.getElementById('access-code').value;
+            // Define a list of valid codes for each plan
+            const codes = {
+                "aVV4nC": "light", // Light Plan
+                "s7cEmb": "classic", // Classic Plan
+                "cUf72q": "elite", // Elite Plan
+                "oBcaiT": "light", // Light Plan
+                "DKqRzU": "classic" // Classic Plan
+            };
 
-            // Check if the entered code is in the list of valid codes
-            if (validCodes.includes(userCode)) {
-                // If the code is correct, show TOS popup
+            const userCode = document.getElementById('access-code').value;
+            const planToShow = codes[userCode];
+
+            if (planToShow) {
+                // Show the Terms of Service popup
                 document.getElementById('tos-popup').style.display = 'flex';
             } else {
                 alert('Incorrect code. Please try again.');
@@ -85,3 +92,4 @@
     </script>
 </body>
 </html>
+
