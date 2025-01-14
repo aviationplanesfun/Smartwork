@@ -4,35 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smartwork - Enter Code</title>
-    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="shared.css"> <!-- Ensure the path to shared.css is correct -->
     <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Terms of Service Popup -->
-    <div id="tos-popup" class="popup">
-        <div class="popup-content">
-            <h2>Terms of Service</h2>
-            <p>By using this site, you agree to our terms and conditions...</p>
-            <button id="accept-tos">Accept</button>
-        </div>
-    </div>
-
-    <!-- Header Section -->
+    <!-- Header Section with Gradient Blue Banner -->
     <header>
         <div class="logo">
-            <h1>Smartwork - Enter Code</h1>
+            <h1>Smartwork</h1>
         </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="enter-code.html">Enter Code</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Code Entry Section -->
-    <section id="access-code-section">
+    <!-- Enter Code Section -->
+    <section id="enter-code-section">
         <h2>Enter Access Code</h2>
-        <input type="text" id="access-code" placeholder="Enter your code" />
-        <button onclick="validateCode()">Submit</button>
+        <p>To access the restricted content, please enter your code below:</p>
+        <input type="text" id="access-code" placeholder="Enter your code here" />
+        <button class="code-button" onclick="verifyCode()">Submit</button>
     </section>
 
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Smartwork. All rights reserved.</p>
     </footer>
+
+    <script>
+        function verifyCode() {
+            var code = document.getElementById("access-code").value;
+            if (code === "yourSecretCode") {
+                alert("Access granted!");
+                // Redirect to restricted page or show restricted content
+            } else {
+                alert("Invalid code. Please try again.");
+            }
+        }
+    </script>
 </body>
 </html>
+
