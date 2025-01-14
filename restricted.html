@@ -40,13 +40,13 @@
                 id: 1,
                 title: "Welcome to Smartwork!",
                 content: "This is your first post in the restricted area. You can modify the posts directly in the code.",
-                timestamp: new Date().toLocaleString()
+                timestamp: "January 14, 2025 09:00 AM"  // Customizable timestamp
             },
             {
                 id: 2,
                 title: "New Features Coming Soon",
                 content: "We're working on adding new features to Smartwork. Stay tuned for updates.",
-                timestamp: new Date().toLocaleString()
+                timestamp: "January 13, 2025 10:30 AM"  // Customizable timestamp
             }
         ];
 
@@ -59,8 +59,9 @@
                 const postElement = document.createElement('div');
                 postElement.classList.add('post');
                 postElement.innerHTML = `
-                    <h4>${post.title} - ${post.timestamp}</h4>
+                    <h4>${post.title}</h4>
                     <p>${post.content}</p>
+                    <small>${post.timestamp}</small>
                 `;
                 postsContainer.appendChild(postElement);
             });
@@ -78,4 +79,5 @@
     </script>
 </body>
 </html>
+
 
