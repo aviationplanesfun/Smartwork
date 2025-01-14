@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f7f7f7;
+    background-color: #f0f0f5;
     color: #333;
     padding: 20px;
     line-height: 1.6;
@@ -20,7 +20,7 @@ h1, h2, h3 {
 
 /* Header Styles */
 header {
-    background-color: #2C3E50;
+    background-color: #3498db;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -71,7 +71,7 @@ header .logo h1 {
 /* Pricing Plans Section */
 #pricing-plans {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 50px;
     animation: fadeIn 1s ease-in-out;
 }
@@ -79,7 +79,7 @@ header .logo h1 {
 .pricing-plan {
     background-color: #fff;
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 45%;
@@ -87,7 +87,7 @@ header .logo h1 {
 }
 
 .pricing-plan h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     color: #3498db;
 }
@@ -109,6 +109,35 @@ header .logo h1 {
 
 .pricing-plan:hover {
     transform: scale(1.05);
+}
+
+/* Access Code Section */
+#access-code-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#access-code-section input {
+    padding: 10px;
+    font-size: 1rem;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#access-code-section button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#access-code-section button:hover {
+    background-color: #2C3E50;
 }
 
 /* Post Section */
@@ -140,21 +169,6 @@ header .logo h1 {
 .post p {
     font-size: 1rem;
     color: #555;
-}
-
-button {
-    background-color: #3498db;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #2C3E50;
 }
 
 /* Animations */
