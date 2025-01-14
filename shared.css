@@ -7,11 +7,11 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #fff; /* White background */
+    background-color: #fff;
     color: #333;
     padding: 20px;
     line-height: 1.6;
-    text-align: center; /* Default text-align to center for content */
+    text-align: center;
 }
 
 h1, h2, h3 {
@@ -19,19 +19,19 @@ h1, h2, h3 {
     color: #333;
 }
 
-/* Header Section with Gradient Blue Banner */
+/* Header Section */
 header {
-    background: linear-gradient(90deg, #3498db, #8e44ad); /* Blue gradient */
+    background: linear-gradient(90deg, #3498db, #8e44ad); 
     color: white;
     padding: 20px;
     display: flex;
-    justify-content: space-between; /* Align logo and nav to opposite sides */
+    justify-content: space-between;
     align-items: center;
-    width: 80%; /* Narrower width */
-    margin: 0 auto; /* Center the header */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slight shadow */
-    border: 2px solid #8e44ad; /* Purple border */
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #8e44ad;
 }
 
 header .logo h1 {
@@ -58,113 +58,19 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    background-color: #9b59b6; /* Purple on hover */
+    background-color: #9b59b6;
     transform: scale(1.05);
-}
-
-/* Enter Code Section */
-#enter-code-section {
-    text-align: center;
-    margin-top: 50px;
-    border: 2px solid #8e44ad; /* Purple border */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-#enter-code-section input {
-    padding: 10px;
-    width: 250px;
-    border: 2px solid #3498db;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    margin-right: 10px;
-}
-
-#enter-code-section input:focus {
-    outline: none;
-    border-color: #8e44ad;
-}
-
-#enter-code-section .code-button {
-    padding: 12px 25px;
-    background-color: #3498db; /* Blue background */
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#enter-code-section .code-button:hover {
-    background-color: #2980b9;
-    transform: scale(1.05);
-}
-
-/* Popup Styling for Terms of Service */
-.popup {
-    display: none; /* Initially hidden */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.popup-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 2px solid #8e44ad; /* Purple border */
-}
-
-.popup-content h3 {
-    margin-bottom: 20px;
-}
-
-.popup-content button {
-    padding: 12px 25px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin: 10px;
-}
-
-.popup-content button:hover {
-    background-color: #2980b9;
-    transform: scale(1.05);
-}
-
-/* Footer Section */
-footer {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #777;
-    border-top: 2px solid #8e44ad; /* Purple border */
-    padding-top: 20px;
 }
 
 /* Pricing Plans Section */
 #pricing-plans {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
     gap: 30px;
     margin-top: 50px;
-    animation: fadeIn 1s ease-in-out;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
 .pricing-plan {
@@ -175,15 +81,15 @@ footer {
     padding: 30px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Increased width */
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
+    margin: 0;
 }
 
 .pricing-plan h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #8e44ad; /* Purple color */
+    color: #8e44ad;
 }
 
 .pricing-plan p {
@@ -209,7 +115,7 @@ footer {
 /* Button Styling in Pricing Plans */
 .plan-button {
     padding: 12px 25px;
-    background-color: #8e44ad; /* Purple background */
+    background-color: #8e44ad;
     color: white;
     border: none;
     border-radius: 25px;
@@ -217,7 +123,7 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: 20px;
-    border: 2px solid #8e44ad; /* Purple border */
+    border: 2px solid #8e44ad;
 }
 
 .plan-button:hover {
@@ -225,86 +131,48 @@ footer {
     transform: scale(1.05);
 }
 
-/* Button Styling for Other Sections */
-#enter-code-section button,
-header nav ul li a {
+/* Responsive Layout for Pricing Plans */
+@media (max-width: 768px) {
+    #pricing-plans {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .pricing-plan {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+/* Enter Code Section */
+#enter-code-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#enter-code-section button {
     padding: 12px 25px;
-    background-color: #8e44ad; /* Purple background */
+    background-color: #8e44ad;
     color: white;
     border: none;
     border-radius: 25px;
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    border: 2px solid #8e44ad; /* Purple border */
+    margin-top: 20px;
+    border: 2px solid #8e44ad;
 }
 
-#enter-code-section button:hover,
-header nav ul li a:hover {
+#enter-code-section button:hover {
     background-color: #9b59b6;
     transform: scale(1.05);
 }
 
-/* Responsive Layout for Pricing Plans */
-@media (max-width: 768px) {
-    #pricing-plans {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .pricing-plan {
-        width: 90%; /* Make the pricing plan cards take up more space on small screens */
-        margin-bottom: 20px;
-    }
-}
-
-/* Restricted Section Styles */
-#restricted-page {
+/* Footer Section */
+footer {
     margin-top: 50px;
     text-align: center;
-    border: 2px solid #8e44ad; /* Purple border */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.folder-button {
-    background-color: #8e44ad;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin: 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    border: 2px solid #8e44ad; /* Purple border */
-}
-
-.folder-button:hover {
-    background-color: #9b59b6;
-    transform: scale(1.05);
-}
-
-.restricted-posts {
-    display: none;
-    margin-top: 30px;
-}
-
-.restricted-posts.active {
-    display: block;
-}
-
-.restricted-post {
-    background-color: #f1f1f1;
-    border: 2px solid #8e44ad; /* Purple border */
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-.restricted-post h3 {
-    color: #8e44ad;
-}
-
-.restricted-post p {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    color: #777;
+    border-top: 2px solid #8e44ad;
+    padding-top: 20px;
 }
