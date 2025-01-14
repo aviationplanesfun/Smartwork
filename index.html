@@ -65,16 +65,24 @@
         <p id="login-error" class="error hidden">Invalid or used code. Please try again.</p>
       </form>
     </section>
-    <section id="tos" class="section-hidden">
-      <h2>Please Accept Our Terms of Service</h2>
-      <p>To proceed, you must accept our terms of service.</p>
-      <a href="tos.html" target="_blank">Read Terms of Service</a>
-      <div>
-        <input type="checkbox" id="tos-check">
-        <label for="tos-check">I accept the Terms of Service</label>
+    <!-- TOS Popup -->
+    <div id="tos-popup" class="tos-popup hidden">
+      <div class="tos-popup-content">
+        <h2>Terms of Service</h2>
+        <p>Please read our terms of service below:</p>
+        <div class="tos-text">
+          <p>Your terms of service content goes here. Please make sure it's long enough to require scrolling.</p>
+          <p>... More content ...</p>
+          <p>... More content ...</p>
+          <p>... More content ...</p>
+        </div>
+        <div class="tos-footer">
+          <input type="checkbox" id="tos-accept" />
+          <label for="tos-accept">I accept the Terms of Service</label>
+          <button id="tos-accept-btn" disabled>Accept</button>
+        </div>
       </div>
-      <button id="proceed">Proceed</button>
-    </section>
+    </div>
     <section id="restricted" class="section-hidden">
       <h2>Welcome to the Members' Page</h2>
       <div id="content-container">
@@ -89,5 +97,4 @@
   <script src="script.js"></script>
 </body>
 </html>
-
 
