@@ -1,54 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smartwork - Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartwork - Home</title>
+    <link rel="stylesheet" href="shared.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>Smartwork</h1>
-    <nav>
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="restricted.html" class="nav-link">Restricted</a>
-    </nav>
-  </header>
+    <!-- Main Content -->
+    <header>
+        <div class="logo">
+            <h1>Smartwork</h1>
+        </div>
+    </header>
 
-  <main>
-    <section id="home">
-      <div class="content">
-        <h2>Welcome to Smartwork</h2>
-        <p>Optimize your workflow and get access to exclusive tools with Smartwork.</p>
-      </div>
-
-      <!-- Pricing Plans -->
-      <div class="pricing-plans">
-        <h2>Pricing Plans</h2>
-        <div class="pricing-card">
-          <h3>Basic</h3>
-          <p>$9.99/month</p>
-          <p>Access to basic tools</p>
+    <section class="pricing">
+        <h2>Choose Your Plan</h2>
+        <div class="plan">
+            <h3>Basic Plan</h3>
+            <p class="price">10€ / month</p>
+            <ul class="perks">
+                <li>1 Website</li>
+                <li>Basic Support</li>
+                <li>Limited Features</li>
+            </ul>
+            <button>Get Started</button>
         </div>
-        <div class="pricing-card">
-          <h3>Pro</h3>
-          <p>$29.99/month</p>
-          <p>Access to all tools</p>
+        <div class="plan premium">
+            <h3>Premium Plan</h3>
+            <p class="price">15€ / month</p>
+            <ul class="perks">
+                <li>Unlimited Websites</li>
+                <li>Priority Support</li>
+                <li>All Features Included</li>
+            </ul>
+            <button>Get Started</button>
         </div>
-        <div class="pricing-card">
-          <h3>Enterprise</h3>
-          <p>$99.99/month</p>
-          <p>Access to exclusive tools and services</p>
-        </div>
-      </div>
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Smartwork. All rights reserved.</p>
-  </footer>
-  
-  <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2025 Smartwork. All rights reserved.</p>
+    </footer>
 </body>
 </html>
+
