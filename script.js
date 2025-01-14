@@ -11,6 +11,10 @@ const restrictedSection = document.getElementById("restricted");
 const contentContainer = document.getElementById("content-container");
 const logoutButton = document.getElementById("logout");
 
+const tosPopup = document.getElementById("tos-popup");
+const tosAcceptCheckbox = document.getElementById("tos-accept");
+const tosAcceptButton = document.getElementById("tos-accept-btn");
+
 // Predefined content for the restricted page
 const restrictedContent = `
   <h3>Exclusive Member Content</h3>
@@ -27,21 +31,27 @@ loginForm.addEventListener("submit", (e) => {
     sessionStorage.setItem("loggedIn", "true");
     loginError.classList.add("hidden");
     hideAllSections();
-    tosSection.classList.remove("section-hidden");
-    tosSection.classList.add("section-visible");
+    tosPopup.classList.remove("hidden");
   } else {
     loginError.classList.remove("hidden");
   }
 });
 
-proceedButton.addEventListener("click", () => {
-  if (tosCheckbox.checked) {
+tosAcceptCheckbox.addEventListener("change", () => {
+  if (tosAcceptCheckbox.checked) {
+    tosAcceptButton.disabled = false;
+  } else {
+    tosAcceptButton.disabled = true;
+  }
+});
+
+tosAcceptButton.addEventListener("click", () => {
+  if (tosAcceptCheckbox.checked) {
     hideAllSections();
     restrictedSection.classList.remove("section-hidden");
     restrictedSection.classList.add("section-visible");
     contentContainer.innerHTML = restrictedContent;
-  } else {
-    alert("You must accept the Terms of Service to proceed.");
+    tosPopup.classList.add("hidden");
   }
 });
 
@@ -57,4 +67,3 @@ function hideAllSections() {
     section.classList.add("section-hidden");
   });
 }
-
