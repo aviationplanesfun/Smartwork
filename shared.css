@@ -12,15 +12,6 @@ body {
   display: none;
 }
 
-.section-visible {
-  display: block;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.section-hidden {
-  display: none;
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -145,8 +136,35 @@ header nav a:hover {
   text-align: center;
 }
 
-#content-container {
-  margin-top: 20px;
+#code-form-container {
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 0 auto;
+}
+
+#code-form-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#code-form-container button {
+  background: #6a11cb;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#code-form-container button:hover {
+  background: #2575fc;
 }
 
 .tos-popup {
@@ -189,10 +207,11 @@ button {
   background: #6a11cb;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 1rem;
 }
 
 button:hover {
@@ -210,3 +229,4 @@ button:hover {
     transform: translateY(0);
   }
 }
+
