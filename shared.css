@@ -7,20 +7,20 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f0f0f5;
-    color: #333;
+    background: linear-gradient(to right, #3498db, #8e44ad); /* Gradient background */
+    color: #fff;
     padding: 20px;
     line-height: 1.6;
 }
 
 h1, h2, h3 {
     font-family: 'Helvetica Neue', sans-serif;
-    color: #333;
+    color: #fff;
 }
 
 /* Header Styles */
 header {
-    background-color: #3498db;
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -71,19 +71,22 @@ header .logo h1 {
 /* Pricing Plans Section */
 #pricing-plans {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 50px;
     animation: fadeIn 1s ease-in-out;
 }
 
 .pricing-plan {
     background-color: #fff;
+    color: #333;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 45%;
+    width: 250px;
+    margin: 0 15px;
     transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .pricing-plan h2 {
@@ -109,11 +112,12 @@ header .logo h1 {
 
 .pricing-plan:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Access Code Section */
+/* Code Entry Section */
 #access-code-section {
-    margin-top: 30px;
+    margin-top: 50px;
     text-align: center;
 }
 
