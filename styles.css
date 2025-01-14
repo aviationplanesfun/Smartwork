@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  background: #007bff;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.pricing-table {
+  display: flex;
+  gap: 2rem;
+}
+
+.pricing-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+  width: 200px;
+}
+
+.pricing-card h3 {
+  margin: 0 0 1rem;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
