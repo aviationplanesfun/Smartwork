@@ -29,6 +29,16 @@
         <button class="code-button" onclick="verifyCode()">Submit</button>
     </section>
 
+    <!-- Terms of Service Popup -->
+    <div id="tos-popup" class="popup">
+        <div class="popup-content">
+            <h3>Terms of Service</h3>
+            <p>Please read and accept the Terms of Service to continue.</p>
+            <button onclick="acceptTOS()">Accept</button>
+            <button onclick="declineTOS()">Decline</button>
+        </div>
+    </div>
+
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Smartwork. All rights reserved.</p>
@@ -39,10 +49,21 @@
             var code = document.getElementById("access-code").value;
             if (code === "yourSecretCode") {
                 alert("Access granted!");
-                <meta http-equiv="refresh" content="5; url=https://aviationplanesfun.github.io/Smartwork/restricted.html">
+                // Show TOS popup
+                document.getElementById("tos-popup").style.display = "block";
             } else {
                 alert("Invalid code. Please try again.");
             }
+        }
+
+        function acceptTOS() {
+            // Redirect to restricted page after accepting TOS
+            window.location.href = "restricted.html";
+        }
+
+        function declineTOS() {
+            // Close the TOS popup if the user declines
+            document.getElementById("tos-popup").style.display = "none";
         }
     </script>
 </body>
