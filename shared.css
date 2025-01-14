@@ -64,10 +64,15 @@ header nav a:hover {
 /* Pricing Plans */
 .pricing-plans {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
   margin-top: 40px;
   animation: fadeInUp 1s ease-out;
+}
+
+.pricing-plans h2 {
+  margin-bottom: 20px;
 }
 
 .pricing-card {
@@ -77,6 +82,7 @@ header nav a:hover {
   padding: 20px;
   text-align: center;
   width: 250px;
+  margin: 10px;
   animation: slideIn 1s ease-out;
 }
 
@@ -216,3 +222,4 @@ button:hover {
     transform: translateY(0);
   }
 }
+
