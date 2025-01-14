@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing and Access</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Service</h1>
+    <nav>
+      <a href="#" id="home-link">Home</a>
+      <a href="#" id="pricing-link">Pricing</a>
+      <a href="#" id="restricted-link">Restricted Page</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Home</h2>
+      <p>Welcome to our service. Explore the perks and pricing below.</p>
+    </section>
+
+    <section id="pricing" class="hidden">
+      <h2>Pricing</h2>
+      <div class="pricing-table">
+        <div class="pricing-card">
+          <h3>Basic Plan</h3>
+          <p>$10/month</p>
+          <ul>
+            <li>Feature 1</li>
+            <li>Feature 2</li>
+          </ul>
+        </div>
+        <div class="pricing-card">
+          <h3>Premium Plan</h3>
+          <p>$30/month</p>
+          <ul>
+            <li>Feature 1</li>
+            <li>Feature 2</li>
+            <li>Feature 3</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="restricted" class="hidden">
+      <h2>Restricted Page</h2>
+      <p>This page is only accessible to logged-in users.</p>
+    </section>
+
+    <section id="login" class="hidden">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="otp">Enter OTP:</label>
+        <input type="text" id="otp" required>
+        <button type="submit">Login</button>
+      </form>
+      <p id="login-error" class="error hidden">Invalid or used OTP.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
