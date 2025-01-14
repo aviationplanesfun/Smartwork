@@ -11,47 +11,45 @@
   <header>
     <h1>Smartwork</h1>
     <nav>
-      <a href="#" id="home-link">Home</a>
-      <a href="#" id="pricing-link">Pricing</a>
-      <a href="#" id="restricted-link">Restricted</a>
+      <a href="#home">Home</a>
+      <a href="#restricted-link">Restricted</a>
     </nav>
   </header>
   <main>
-    <section id="home" class="visible">
-      <h2>Welcome to Smartwork</h2>
-      <p>Optimize your workflow and get access to exclusive tools with Smartwork.</p>
-    </section>
-    <section id="pricing" class="hidden">
-      <h2>Our Pricing Plans</h2>
-      <div class="pricing-container">
-        <div class="pricing-card">
-          <h3>Basic Plan</h3>
-          <p class="price">$10/month</p>
-          <ul>
-            <li>Access to basic tools</li>
-            <li>Email support</li>
-          </ul>
-          <button>Choose Plan</button>
-        </div>
-        <div class="pricing-card premium">
-          <h3>Premium Plan</h3>
-          <p class="price">$25/month</p>
-          <ul>
-            <li>All Basic features</li>
-            <li>Priority support</li>
-            <li>Advanced analytics</li>
-          </ul>
-          <button>Choose Plan</button>
-        </div>
-        <div class="pricing-card">
-          <h3>Pro Plan</h3>
-          <p class="price">$50/month</p>
-          <ul>
-            <li>All Premium features</li>
-            <li>Dedicated account manager</li>
-            <li>24/7 support</li>
-          </ul>
-          <button>Choose Plan</button>
+    <section id="home">
+      <div class="content">
+        <h2>Welcome to Smartwork</h2>
+        <p>Optimize your workflow and get access to exclusive tools with Smartwork.</p>
+      </div>
+      <div class="pricing">
+        <h2>Our Pricing Plans</h2>
+        <div class="pricing-container">
+          <div class="pricing-card">
+            <h3>Basic Plan</h3>
+            <p class="price">$10/month</p>
+            <ul>
+              <li>Access to basic tools</li>
+              <li>Email support</li>
+            </ul>
+          </div>
+          <div class="pricing-card premium">
+            <h3>Premium Plan</h3>
+            <p class="price">$25/month</p>
+            <ul>
+              <li>All Basic features</li>
+              <li>Priority support</li>
+              <li>Advanced analytics</li>
+            </ul>
+          </div>
+          <div class="pricing-card">
+            <h3>Pro Plan</h3>
+            <p class="price">$50/month</p>
+            <ul>
+              <li>All Premium features</li>
+              <li>Dedicated account manager</li>
+              <li>24/7 support</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -76,11 +74,8 @@
     </section>
     <section id="restricted" class="hidden">
       <h2>Welcome to the Members' Page</h2>
-      <div id="posts-container">
-        <h3>Posts</h3>
-        <div id="posts"></div>
-        <textarea id="new-post" placeholder="Write a new post..."></textarea>
-        <button id="add-post">Add Post</button>
+      <div id="content-container">
+        <!-- Add your content (images and text) directly in the script.js file -->
       </div>
       <button id="logout">Log Out</button>
     </section>
@@ -91,3 +86,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
