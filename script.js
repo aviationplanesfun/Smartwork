@@ -15,13 +15,12 @@ function validateCode() {
 document.getElementById('accept-tos').addEventListener('click', function() {
     // Hide TOS popup
     document.getElementById('tos-popup').style.display = 'none';
-    
-    // Show the post section
-    document.getElementById('post-section').classList.remove('hidden');
-    document.getElementById('posts-section').classList.remove('hidden');
+
+    // Redirect to restricted area after TOS acceptance
+    window.location.href = 'restricted.html';
 });
 
-// Array to store posts
+// Array to store posts (on the restricted page)
 let posts = [
     {
         id: 1,
@@ -37,10 +36,9 @@ let posts = [
     }
 ];
 
-// Function to display posts on both homepage and restricted page
+// Function to display posts on the restricted page
 function displayPosts() {
     const postsContainer = document.getElementById('posts-container');
-    const postsSection = document.getElementById('posts-section');
     postsContainer.innerHTML = ''; // Clear existing posts
 
     posts.forEach(post => {
@@ -55,4 +53,7 @@ function displayPosts() {
 }
 
 // Call the displayPosts function to render the posts when the page loads
-displayPosts();
+if (document.getElementById('posts-container')) {
+    displayPosts();
+}
+
