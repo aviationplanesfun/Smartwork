@@ -60,7 +60,7 @@ main {
   padding: 40px 0;
 }
 
-#home, #pricing, #login, #restricted {
+#home, #pricing, #login, #tos, #restricted {
   text-align: center;
   padding: 40px 20px;
   background-color: #fff;
@@ -70,80 +70,60 @@ main {
   max-width: 800px;
 }
 
-/* Pricing Section */
-.pricing-container {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+/* ToS Page */
+#tos div {
+  margin: 20px 0;
 }
 
-.pricing-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 20px;
-  width: 300px;
-  transition: transform 0.3s, box-shadow 0.3s;
+#tos button {
+  background: #6a11cb;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.pricing-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+#tos button:hover {
+  background: #2575fc;
 }
 
-.pricing-card h3 {
-  font-size: 1.5rem;
-  color: #6a11cb;
+/* Restricted Page */
+#posts-container {
+  text-align: left;
+  margin: 20px 0;
 }
 
-.pricing-card .price {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #333;
+#new-post {
+  width: 100%;
+  height: 80px;
   margin: 10px 0;
 }
 
-.pricing-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0;
-}
-
-.pricing-card ul li {
-  font-size: 1rem;
-  color: #555;
-  margin: 8px 0;
-}
-
-.pricing-card button {
+#add-post {
   background: #6a11cb;
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: background 0.3s, transform 0.2s;
 }
 
-.pricing-card button:hover {
+#add-post:hover {
   background: #2575fc;
-  transform: scale(1.05);
 }
 
-/* Footer */
-footer {
-  background: #333;
-  text-align: center;
-  padding: 20px 0;
+#logout {
+  margin-top: 20px;
+  background: #ff4d4d;
   color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-footer p {
-  margin: 0;
-  font-size: 1rem;
-  color: #ccc;
+#logout:hover {
+  background: #e63939;
 }
