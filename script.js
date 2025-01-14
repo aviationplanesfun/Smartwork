@@ -16,37 +16,33 @@ function getCookie(name) {
 // Mock data for OTPs
 const otps = new Set(["12345", "67890"]); // Predefined OTPs
 
-// References to sections
+// References to sections and links
 const homeSection = document.getElementById("home");
 const pricingSection = document.getElementById("pricing");
 const restrictedSection = document.getElementById("restricted");
 const loginSection = document.getElementById("login");
 
-// References to links
 const homeLink = document.getElementById("home-link");
 const pricingLink = document.getElementById("pricing-link");
 const restrictedLink = document.getElementById("restricted-link");
 
-// Login form
 const loginForm = document.getElementById("login-form");
 const otpInput = document.getElementById("otp");
 const loginError = document.getElementById("login-error");
 
-// ToS confirmation
-const confirmTosButton = document.getElementById("confirm-tos");
-const tosError = document.getElementById("tos-error");
+const logoutButton = document.getElementById("logout");
 
-// Helper function to hide all sections
+// Hide all sections
 function hideAllSections() {
-  homeSection.classList.remove("visible");
-  pricingSection.classList.remove("visible");
-  restrictedSection.classList.remove("visible");
-  loginSection.classList.remove("visible");
+  homeSection.classList.add("hidden");
+  pricingSection.classList.add("hidden");
+  restrictedSection.classList.add("hidden");
+  loginSection.classList.add("hidden");
 }
 
-// Show a section with animation
+// Show a section
 function showSection(section) {
-  section.classList.add("visible");
+  section.classList.remove("hidden");
 }
 
 // Navigation
@@ -61,11 +57,11 @@ pricingLink.addEventListener("click", () => {
 });
 
 restrictedLink.addEventListener("click", () => {
-  hideAllSections();
   if (sessionStorage.getItem("loggedIn")) {
+    hideAllSections();
     showSection(restrictedSection);
-    tosError.classList.add("hidden");
   } else {
+    hideAllSections();
     showSection(loginSection);
   }
 });
@@ -88,22 +84,11 @@ loginForm.addEventListener("submit", (e) => {
   }
 });
 
-// ToS confirmation
-confirmTosButton.addEventListener("click", () => {
-  sessionStorage.setItem("tosConfirmed", "true");
+// Logout
+logoutButton.addEventListener("click", () => {
+  sessionStorage.removeItem("loggedIn");
   hideAllSections();
-  showSection(restrictedSection);
-});
-
-// Redirect to home if ToS not confirmed
-restrictedLink.addEventListener("click", () => {
-  if (!sessionStorage.getItem("tosConfirmed")) {
-    tosError.classList.remove("hidden");
-    setTimeout(() => {
-      hideAllSections();
-      showSection(homeSection);
-    }, 2000);
-  }
+  showSection(homeSection);
 });
 
 // Initialize default section
