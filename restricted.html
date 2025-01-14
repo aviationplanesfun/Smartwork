@@ -31,6 +31,10 @@
             <button class="folder-button" onclick="showPosts('folder1')" id="folder1-button">Hausaufgaben Lösungen</button>
             <button class="folder-button" onclick="showPosts('folder2')" id="folder2-button">Olganizer</button>
             <button class="folder-button" onclick="showPosts('folder3')" id="folder3-button">Themenkalender</button>
+            <button class="folder-button" onclick="showPosts('folder4')" id="folder4-button">Schulordner</button>
+            <button class="folder-button" onclick="showPosts('folder5')" id="folder5-button">Klassenarbeit Notizen</button>
+            <button class="folder-button" onclick="showPosts('folder6')" id="folder6-button">Klassenarbeits Trainer</button>
+            <button class="folder-button" onclick="showPosts('folder7')" id="folder7-button">Pro Videos</button>
         </div>
 
         <!-- Posts Container -->
@@ -54,8 +58,8 @@
                 { id: 4, title: "Folder 2 Post 2", content: "This is the second post in Folder 2.", timestamp: "January 11, 2025 07:30 AM" }
             ],
             folder3: [
-                { id: 5, title: "Folder 3 Post 1", content: "This is the first post in Folder 3.", timestamp: "January 10, 2025 06:00 AM" },
-                { id: 6, title: "Folder 3 Post 2", content: "This is the second post in Folder 3.", timestamp: "January 09, 2025 05:30 AM" }
+                { id: 5, title: "Themenkalender", content: "Noch nichts", timestamp: "Januar 14, 2025 16:37" },
+                { id: 6, title: "Themenkalender", content: "Noch nichts", timestamp: "January 09, 2025 05:30 AM" }
             ]
         };
 
@@ -92,16 +96,28 @@
                 document.getElementById('folder1-button').style.display = 'block'; // Hausaufgaben Lösungen
                 document.getElementById('folder2-button').style.display = 'block'; // Olganizer
                 document.getElementById('folder3-button').style.display = 'none';  // Themenkalender
+                document.getElementById('folder4-button').style.display = 'none';  // Schulordner
+                document.getElementById('folder5-button').style.display = 'none';  // Klassenarbeit notizen
+                document.getElementById('folder6-button').style.display = 'none';  // Klassenarbeits Trainer
+                document.getElementById('folder7-button').style.display = 'none';  // Pro Videos
             } else if (userCode === 'classic') {
                 // Show classic plan content
                 document.getElementById('folder1-button').style.display = 'block'; // Hausaufgaben Lösungen
                 document.getElementById('folder2-button').style.display = 'block'; // Olganizer
                 document.getElementById('folder3-button').style.display = 'none';  // Themenkalender
+                document.getElementById('folder4-button').style.display = 'block';  // Schulordner
+                document.getElementById('folder5-button').style.display = 'none';  // Klassenarbeit notizen
+                document.getElementById('folder6-button').style.display = 'none';  // Klassenarbeits Trainer
+                document.getElementById('folder7-button').style.display = 'none';  // Pro Videos
             } else if (userCode === 'elite') {
                 // Show elite plan content
                 document.getElementById('folder1-button').style.display = 'block'; // Hausaufgaben Lösungen
                 document.getElementById('folder2-button').style.display = 'block'; // Olganizer
-                document.getElementById('folder3-button').style.display = 'block'; // Themenkalender
+                document.getElementById('folder3-button').style.display = 'block';  // Themenkalender
+                document.getElementById('folder4-button').style.display = 'block';  // Schulordner
+                document.getElementById('folder5-button').style.display = 'block';  // Klassenarbeit notizen
+                document.getElementById('folder6-button').style.display = 'block';  // Klassenarbeits Trainer
+                document.getElementById('folder7-button').style.display = 'block';  // Pro Videos
             }
         } else {
             // User has not accepted TOS, show restricted message and redirect
