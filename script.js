@@ -2,7 +2,7 @@
 function validateCode() {
     // Mapping of valid codes to subscription plans
     const codeToPlan = {
-        "aVV4nC": "Light", // 1
+        SECRET_1: "Light", // 1
         "s7cEmb": "Light", // 2
         "cUf72q": "Light", // 3
         "oBcaiT": "Light", // 4
