@@ -12,6 +12,15 @@ body {
   display: none;
 }
 
+.section-visible {
+  display: block;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.section-hidden {
+  display: none;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -82,6 +91,11 @@ header nav a:hover {
   padding: 20px;
   text-align: center;
   width: 250px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.pricing-card:hover {
+  transform: scale(1.05);
 }
 
 .pricing-card h3 {
@@ -125,6 +139,7 @@ button {
   padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -139,3 +154,16 @@ button:hover {
 #logout:hover {
   background: #e63939;
 }
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
