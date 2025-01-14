@@ -51,52 +51,12 @@ header nav a:hover {
   color: #f4f7fc;
 }
 
-/* Home Section */
-#home {
+/* Restricted Page */
+#restricted {
   padding: 40px 20px;
   text-align: center;
 }
 
-#home .content {
-  margin-bottom: 40px;
-}
-
-/* Pricing Plans */
-.pricing-plans {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-  animation: fadeInUp 1s ease-out;
-}
-
-.pricing-plans h2 {
-  margin-bottom: 20px;
-}
-
-.pricing-card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  width: 250px;
-  margin: 10px;
-  animation: slideIn 1s ease-out;
-}
-
-.pricing-card h3 {
-  font-size: 1.5rem;
-  color: #2575fc;
-}
-
-.pricing-card p {
-  font-size: 1.1rem;
-  color: #333;
-}
-
-/* Code Form (Restricted Page) */
 #code-form-container {
   padding: 20px;
   background: #fff;
@@ -104,7 +64,6 @@ header nav a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
   margin: 0 auto;
-  animation: fadeInUp 1s ease-out;
 }
 
 #code-form-container input {
@@ -129,7 +88,11 @@ header nav a:hover {
   background: #2575fc;
 }
 
-/* TOS Popup */
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
 .tos-popup {
   position: fixed;
   top: 0;
@@ -141,7 +104,6 @@ header nav a:hover {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  animation: fadeIn 1s ease-in-out;
 }
 
 .tos-popup-content {
@@ -152,7 +114,6 @@ header nav a:hover {
   border-radius: 10px;
   overflow-y: auto;
   max-height: 70%;
-  animation: slideInFromTop 0.8s ease-out;
 }
 
 .tos-text {
@@ -175,7 +136,6 @@ button {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-size: 1rem;
 }
 
 button:hover {
@@ -190,35 +150,6 @@ button:hover {
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromTop {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
     transform: translateY(0);
   }
 }
