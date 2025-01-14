@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smartwork - Restricted</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+  <header>
+    <h1>Smartwork</h1>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="restricted.html" class="nav-link">Restricted</a>
+    </nav>
+  </header>
+  <main>
+    <section id="restricted" class="section-visible">
+      <h2>Welcome to the Members' Area</h2>
+      <div id="content-container">
+        <!-- Content will be added after TOS acceptance -->
+      </div>
+    </section>
+  </main>
+
+  <!-- TOS Popup -->
+  <div id="tos-popup" class="tos-popup hidden">
+    <div class="tos-popup-content">
+      <h2>Terms of Service</h2>
+      <p>Please read our terms of service below:</p>
+      <div class="tos-text">
+        <p>Your terms of service content goes here. Please make sure it's long enough to require scrolling.</p>
+        <p>... More content ...</p>
+        <p>... More content ...</p>
+        <p>... More content ...</p>
+      </div>
+      <div class="tos-footer">
+        <input type="checkbox" id="tos-accept" />
+        <label for="tos-accept">I accept the Terms of Service</label>
+        <button id="tos-accept-btn" disabled>Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Smartwork. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
