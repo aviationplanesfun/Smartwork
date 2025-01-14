@@ -1,50 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const codeForm = document.getElementById("code-form-container");
-  const userCode = document.getElementById("user-code");
-  const submitCodeButton = document.getElementById("submit-code");
-  const errorMessage = document.getElementById("error-message");
+// Function to validate access code
+function validateCode() {
+    const correctCode = "12345"; // Example code for validation
+    const userCode = document.getElementById('access-code').value;
 
-  const tosPopup = document.getElementById("tos-popup");
-  const tosAcceptButton = document.getElementById("tos-accept-btn");
-  const tosCheckbox = document.getElementById("tos-accept");
-  const restrictedContent = document.getElementById("restricted-content");
-
-  let codeEntered = false; // Flag to track if the correct code is entered
-
-  // Handle code form submission
-  submitCodeButton.addEventListener("click", function (event) {
-    event.preventDefault();
-    const code = userCode.value.trim();
-
-    // Check if the code is correct
-    if (code === "1234") {
-      codeEntered = true;
-      errorMessage.classList.add("hidden");
-      showTOSPopup(); // Show TOS popup if code is correct
+    if (userCode === correctCode) {
+        // Show TOS Popup
+        document.getElementById('tos-popup').style.display = 'flex';
     } else {
-      errorMessage.classList.remove("hidden");
+        alert('Incorrect code. Please try again.');
     }
-  });
+}
 
-  // Handle TOS acceptance
-  tosCheckbox.addEventListener("change", function () {
-    tosAcceptButton.disabled = !tosCheckbox.checked;
-  });
-
-  tosAcceptButton.addEventListener("click", function () {
-    if (tosCheckbox.checked) {
-      // Hide TOS popup and show restricted content after accepting TOS
-      tosPopup.classList.add("hidden");
-      restrictedContent.classList.remove("hidden");
-    }
-  });
-
-  // Show TOS popup
-  function showTOSPopup() {
-    if (codeEntered) {
-      tosPopup.classList.remove("hidden");
-    }
-  }
+// Function to handle TOS acceptance
+document.getElementById('accept-tos').addEventListener('click', function() {
+    // After accepting, you can redirect to restricted content
+    alert('Access granted! You are now entering the restricted area.');
+    // Redirect to restricted content (you can replace with actual restricted content URL)
+    window.location.href = "restricted.html";
 });
-
 
