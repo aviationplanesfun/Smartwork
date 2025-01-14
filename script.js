@@ -18,6 +18,7 @@ document.getElementById('accept-tos').addEventListener('click', function() {
     
     // Show the post section
     document.getElementById('post-section').classList.remove('hidden');
+    document.getElementById('posts-section').classList.remove('hidden');
 });
 
 // Array to store posts
@@ -36,9 +37,10 @@ let posts = [
     }
 ];
 
-// Function to display posts
+// Function to display posts on both homepage and restricted page
 function displayPosts() {
     const postsContainer = document.getElementById('posts-container');
+    const postsSection = document.getElementById('posts-section');
     postsContainer.innerHTML = ''; // Clear existing posts
 
     posts.forEach(post => {
