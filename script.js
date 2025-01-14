@@ -1,6 +1,20 @@
+// Helper functions for cookies
+function setCookie(name, value, days) {
+  const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+
+function getCookie(name) {
+  const cookies = document.cookie.split("; ");
+  for (let cookie of cookies) {
+    const [key, value] = cookie.split("=");
+    if (key === name) return value;
+  }
+  return null;
+}
+
 // Mock data for OTPs
 const otps = new Set(["12345", "67890"]); // Predefined OTPs
-const usedOtps = new Set();
 
 // References to sections
 const homeSection = document.getElementById("home");
@@ -18,31 +32,41 @@ const loginForm = document.getElementById("login-form");
 const otpInput = document.getElementById("otp");
 const loginError = document.getElementById("login-error");
 
+// ToS confirmation
+const confirmTosButton = document.getElementById("confirm-tos");
+const tosError = document.getElementById("tos-error");
+
 // Helper function to hide all sections
 function hideAllSections() {
-  homeSection.classList.add("hidden");
-  pricingSection.classList.add("hidden");
-  restrictedSection.classList.add("hidden");
-  loginSection.classList.add("hidden");
+  homeSection.classList.remove("visible");
+  pricingSection.classList.remove("visible");
+  restrictedSection.classList.remove("visible");
+  loginSection.classList.remove("visible");
+}
+
+// Show a section with animation
+function showSection(section) {
+  section.classList.add("visible");
 }
 
 // Navigation
 homeLink.addEventListener("click", () => {
   hideAllSections();
-  homeSection.classList.remove("hidden");
+  showSection(homeSection);
 });
 
 pricingLink.addEventListener("click", () => {
   hideAllSections();
-  pricingSection.classList.remove("hidden");
+  showSection(pricingSection);
 });
 
 restrictedLink.addEventListener("click", () => {
   hideAllSections();
   if (sessionStorage.getItem("loggedIn")) {
-    restrictedSection.classList.remove("hidden");
+    showSection(restrictedSection);
+    tosError.classList.add("hidden");
   } else {
-    loginSection.classList.remove("hidden");
+    showSection(loginSection);
   }
 });
 
@@ -51,12 +75,38 @@ loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const otp = otpInput.value;
 
-  if (otps.has(otp) && !usedOtps.has(otp)) {
-    usedOtps.add(otp); // Mark OTP as used
+  const usedOtps = JSON.parse(getCookie("usedOtps") || "[]");
+
+  if (otps.has(otp) && !usedOtps.includes(otp)) {
+    usedOtps.push(otp); // Mark OTP as used
+    setCookie("usedOtps", JSON.stringify(usedOtps), 7); // Save for 7 days
     sessionStorage.setItem("loggedIn", "true");
     hideAllSections();
-    restrictedSection.classList.remove("hidden");
+    showSection(restrictedSection);
   } else {
     loginError.classList.remove("hidden");
   }
+});
+
+// ToS confirmation
+confirmTosButton.addEventListener("click", () => {
+  sessionStorage.setItem("tosConfirmed", "true");
+  hideAllSections();
+  showSection(restrictedSection);
+});
+
+// Redirect to home if ToS not confirmed
+restrictedLink.addEventListener("click", () => {
+  if (!sessionStorage.getItem("tosConfirmed")) {
+    tosError.classList.remove("hidden");
+    setTimeout(() => {
+      hideAllSections();
+      showSection(homeSection);
+    }, 2000);
+  }
+});
+
+// Initialize default section
+document.addEventListener("DOMContentLoaded", () => {
+  showSection(homeSection);
 });
