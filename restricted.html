@@ -15,37 +15,49 @@
       <a href="restricted.html" class="nav-link">Restricted</a>
     </nav>
   </header>
+
   <main>
-    <section id="restricted" class="section-hidden">
-      <h2>Welcome to the Members' Area</h2>
-      <div id="content-container">
-        <!-- Content will be added after TOS acceptance -->
+    <section id="restricted">
+      <h2>Welcome to the Restricted Area</h2>
+      <div id="code-form-container">
+        <h3>Enter Code to Access</h3>
+        <form id="code-form">
+          <input type="text" id="user-code" placeholder="Enter your code" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <!-- TOS Popup -->
+      <div id="tos-popup" class="tos-popup hidden">
+        <div class="tos-popup-content">
+          <h2>Terms of Service</h2>
+          <p>Please read our terms of service below:</p>
+          <div class="tos-text">
+            <p>Your terms of service content goes here. Please make sure it's long enough to require scrolling.</p>
+            <p>1. DO NOT SHARE ANYTHING IN THIS</p>
+            <p>... More content ...</p>
+            <p>... More content ...</p>
+            <p>... More content ...</p>
+            <p>... More content ...</p>
+            <p>... More content ...</p>
+            <p>... More content ...</p>
+            <p>... More content ...</p>
+            <p>... More content ...</p>
+          </div>
+          <div class="tos-footer">
+            <input type="checkbox" id="tos-accept" />
+            <label for="tos-accept">I accept the Terms of Service</label>
+            <button id="tos-accept-btn" disabled>Accept</button>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- TOS Popup -->
-  <div id="tos-popup" class="tos-popup hidden">
-    <div class="tos-popup-content">
-      <h2>Terms of Service</h2>
-      <p>Please read our terms of service below:</p>
-      <div class="tos-text">
-        <p>Your terms of service content goes here. Please make sure it's long enough to require scrolling.</p>
-        <p>... More content ...</p>
-        <p>... More content ...</p>
-        <p>... More content ...</p>
-      </div>
-      <div class="tos-footer">
-        <input type="checkbox" id="tos-accept" />
-        <label for="tos-accept">I accept the Terms of Service</label>
-        <button id="tos-accept-btn" disabled>Accept</button>
-      </div>
-    </div>
-  </div>
-
   <footer>
     <p>&copy; 2025 Smartwork. All rights reserved.</p>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
