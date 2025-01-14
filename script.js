@@ -3,10 +3,10 @@ function validateCode() {
     // Mapping of valid codes to subscription plans
     const codeToPlan = {
         "aVV4nC": "Light",   // Light plan code
-        "s7cEmb": "Classic",  // Classic plan code
-        "cUf72q": "Elite",    // Elite plan code
-        "oBcaiT": "Light",    // Light plan code
-        "DKqRzU": "Classic"   // Classic plan code
+        "s7cEmb": "Light",  // Classic plan code
+        "cUf72q": "Classic",    // Elite plan code
+        "oBcaiT": "Classic",    // Light plan code
+        "DKqRzU": "Elite"   // Classic plan code
     };
 
     const userCode = document.getElementById('access-code').value;
