@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const codeForm = document.getElementById("code-form");
+  const codeForm = document.getElementById("code-form-container");
   const userCode = document.getElementById("user-code");
+  const submitCodeButton = document.getElementById("submit-code");
   const errorMessage = document.getElementById("error-message");
 
   const tosPopup = document.getElementById("tos-popup");
@@ -8,31 +9,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const tosCheckbox = document.getElementById("tos-accept");
   const restrictedContent = document.getElementById("restricted-content");
 
-  let codeEntered = false; // Flag to check if the user has entered the correct code
+  let codeEntered = false; // Flag to track if the correct code is entered
 
-  // Handling the code form submission
-  codeForm.addEventListener("submit", function (event) {
+  // Handle code form submission
+  submitCodeButton.addEventListener("click", function (event) {
     event.preventDefault();
     const code = userCode.value.trim();
 
     // Check if the code is correct
     if (code === "1234") {
-      codeEntered = true; // Set the flag to true once the correct code is entered
+      codeEntered = true;
       errorMessage.classList.add("hidden");
-      showTOSPopup(); // Show TOS popup
+      showTOSPopup(); // Show TOS popup if code is correct
     } else {
       errorMessage.classList.remove("hidden");
     }
   });
 
-  // Handling TOS acceptance
+  // Handle TOS acceptance
   tosCheckbox.addEventListener("change", function () {
     tosAcceptButton.disabled = !tosCheckbox.checked;
   });
 
   tosAcceptButton.addEventListener("click", function () {
     if (tosCheckbox.checked) {
-      // After accepting TOS, show restricted content and hide the TOS popup
+      // Hide TOS popup and show restricted content after accepting TOS
       tosPopup.classList.add("hidden");
       restrictedContent.classList.remove("hidden");
     }
@@ -45,4 +46,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+
 
