@@ -26,11 +26,11 @@
         <h2>Restricted Content</h2>
         <p id="restricted-message"></p>
 
-        <!-- Folder Buttons -->
+        <!-- Folder Buttons (only visible based on user plan) -->
         <div class="folder-buttons">
-            <button class="folder-button" onclick="showPosts('folder1')">Hausaufgaben Lösungen</button>
-            <button class="folder-button" onclick="showPosts('folder2')">Olganizer</button>
-            <button class="folder-button" onclick="showPosts('folder3')">Themenkalender</button>
+            <button class="folder-button" onclick="showPosts('folder1')" id="folder1-button">Hausaufgaben Lösungen</button>
+            <button class="folder-button" onclick="showPosts('folder2')" id="folder2-button">Olganizer</button>
+            <button class="folder-button" onclick="showPosts('folder3')" id="folder3-button">Themenkalender</button>
         </div>
 
         <!-- Posts Container -->
@@ -46,46 +46,16 @@
         // Example posts for restricted content, categorized into 3 folders
         let posts = {
             folder1: [
-                {
-                    id: 1,
-                    title: "Folder 1 Post 1",
-                    content: "This is the first post in Folder 1.",
-                    timestamp: "January 14, 2025 09:00 AM"
-                },
-                {
-                    id: 2,
-                    title: "Folder 1 Post 2",
-                    content: "This is the second post in Folder 1.",
-                    timestamp: "January 13, 2025 10:30 AM"
-                }
+                { id: 1, title: "Folder 1 Post 1", content: "This is the first post in Folder 1.", timestamp: "January 14, 2025 09:00 AM" },
+                { id: 2, title: "Folder 1 Post 2", content: "This is the second post in Folder 1.", timestamp: "January 13, 2025 10:30 AM" }
             ],
             folder2: [
-                {
-                    id: 3,
-                    title: "Folder 2 Post 1",
-                    content: "This is the first post in Folder 2.",
-                    timestamp: "January 12, 2025 08:00 AM"
-                },
-                {
-                    id: 4,
-                    title: "Folder 2 Post 2",
-                    content: "This is the second post in Folder 2.",
-                    timestamp: "January 11, 2025 07:30 AM"
-                }
+                { id: 3, title: "Folder 2 Post 1", content: "This is the first post in Folder 2.", timestamp: "January 12, 2025 08:00 AM" },
+                { id: 4, title: "Folder 2 Post 2", content: "This is the second post in Folder 2.", timestamp: "January 11, 2025 07:30 AM" }
             ],
             folder3: [
-                {
-                    id: 5,
-                    title: "Folder 3 Post 1",
-                    content: "This is the first post in Folder 3.",
-                    timestamp: "January 10, 2025 06:00 AM"
-                },
-                {
-                    id: 6,
-                    title: "Folder 3 Post 2",
-                    content: "This is the second post in Folder 3.",
-                    timestamp: "January 09, 2025 05:30 AM"
-                }
+                { id: 5, title: "Folder 3 Post 1", content: "This is the first post in Folder 3.", timestamp: "January 10, 2025 06:00 AM" },
+                { id: 6, title: "Folder 3 Post 2", content: "This is the second post in Folder 3.", timestamp: "January 09, 2025 05:30 AM" }
             ]
         };
 
@@ -108,14 +78,39 @@
             }
         }
 
-        // Check if the user has accepted the TOS and entered the correct code
+        // Check if the user has accepted the TOS
         if (localStorage.getItem('hasAcceptedTOS') === 'true') {
             // User has accepted TOS, display content
             document.getElementById('restricted-message').innerText = 'Welcome to the restricted area! Here are your folders:';
+
+            // Get the user code stored in localStorage
+            const userCode = localStorage.getItem('userCode');
+
+            // Hide/show folder buttons based on the user plan
+            if (userCode === 'light') {
+                // Show only light plan content
+                document.getElementById('folder1-button').style.display = 'block'; // Hausaufgaben Lösungen
+                document.getElementById('folder2-button').style.display = 'block'; // Olganizer
+                document.getElementById('folder3-button').style.display = 'none';  // Themenkalender
+            } else if (userCode === 'classic') {
+                // Show classic plan content
+                document.getElementById('folder1-button').style.display = 'block'; // Hausaufgaben Lösungen
+                document.getElementById('folder2-button').style.display = 'block'; // Olganizer
+                document.getElementById('folder3-button').style.display = 'none';  // Themenkalender
+            } else if (userCode === 'elite') {
+                // Show elite plan content
+                document.getElementById('folder1-button').style.display = 'block'; // Hausaufgaben Lösungen
+                document.getElementById('folder2-button').style.display = 'block'; // Olganizer
+                document.getElementById('folder3-button').style.display = 'block'; // Themenkalender
+            }
         } else {
-            // User has not accepted TOS, show restricted message
+            // User has not accepted TOS, show restricted message and redirect
             document.getElementById('restricted-message').innerText = 'Restricted Content: Only accessible after accepting the Terms of Service and entering the correct code.';
+            setTimeout(() => {
+                window.location.href = 'enter-code.html'; // Redirect if not accepted
+            }, 3000); // Redirect after 3 seconds
         }
     </script>
 </body>
 </html>
+
