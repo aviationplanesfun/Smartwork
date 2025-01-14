@@ -1,63 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smartwork - Restricted</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartwork - Restricted Area</title>
+    <link rel="stylesheet" href="shared.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-
-  <header>
-    <h1>Smartwork</h1>
-    <nav>
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="restricted.html" class="nav-link">Restricted</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="restricted">
-      <h2>Enter Access Code</h2>
-
-      <!-- Code Input Form -->
-      <div id="code-form-container">
-        <input type="text" id="user-code" placeholder="Enter your code" required>
-        <button id="submit-code">Submit</button>
-        <p id="error-message" class="hidden error">Invalid or used code. Please try again.</p>
-      </div>
-
-      <!-- TOS Popup -->
-      <div id="tos-popup" class="tos-popup hidden">
-        <div class="tos-popup-content">
-          <h2>Terms of Service</h2>
-          <div class="tos-text">
-            <p>Terms of Service content goes here. You need to scroll down to read all terms.</p>
-            <p>More content...</p>
-            <p>More content...</p>
-            <p>More content...</p>
-          </div>
-          <div class="tos-footer">
-            <input type="checkbox" id="tos-accept" />
-            <label for="tos-accept">I accept the Terms of Service</label>
-            <button id="tos-accept-btn" disabled>Accept</button>
-          </div>
+    <!-- Terms of Service Popup -->
+    <div id="tos-popup" class="popup">
+        <div class="popup-content">
+            <h2>Terms of Service</h2>
+            <p>By using this site, you agree to our terms and conditions...</p>
+            <button id="accept-tos">Accept</button>
         </div>
-      </div>
+    </div>
 
-      <!-- Restricted Content (hidden initially) -->
-      <div id="restricted-content" class="hidden">
-        <h3>Welcome to the Restricted Area!</h3>
-        <p>You have successfully gained access after accepting the TOS.</p>
-      </div>
+    <!-- Main Content -->
+    <header>
+        <div class="logo">
+            <h1>Smartwork</h1>
+        </div>
+    </header>
+
+    <section id="code-section">
+        <h2>Enter Access Code</h2>
+        <input type="text" id="access-code" placeholder="Enter your code" />
+        <button onclick="validateCode()">Submit</button>
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Smartwork. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2025 Smartwork. All rights reserved.</p>
+    </footer>
 </body>
 </html>
